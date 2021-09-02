@@ -1,6 +1,6 @@
 map e $code %f% -n
 map E $code %f% -r
-map gt $nvim ~\todo.md
+map gt $nvim \Users\Alex\todo.md
 map gl cd ~/Downloads
 map gi cd ~/itm
 map gd cd ~/Desktop
@@ -10,3 +10,9 @@ map st :set sortby time; set info time; set reverse!
 map <enter> open
 map w $powershell
 map D delete %f%
+map ö $explorer %PWD%
+map ü $%shell%
+
+set shell powershell.exe
+set shellflag 
+set drawbox
