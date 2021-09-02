@@ -1,0 +1,10 @@
+imap jj <C-c> 
+set auto indent
+set ignorecase
+set smartcase
+set clipboard=unnamed
+nnoremap <leader>d "_d
+xnoremap <leader>d "_d
+xnoremap <leader>p "_dP
+map <silent> qq :bd!<CR>
+map <leader>s :w<CR>

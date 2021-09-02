@@ -1,0 +1,6 @@
+require 'al3xfischer.terminal.plugins'
+require 'al3xfischer.terminal.telescope'
+require 'al3xfischer.terminal.lsp_config'
+require 'al3xfischer.terminal.evil_lualine'
+require 'al3xfischer.terminal.keymap'
+require 'al3xfischer.terminal.settings'

@@ -1,0 +1,30 @@
+:set clipboard=unnamed
+let g:mapleader=' '
+nmap <leader>s :w<CR>
+nmap qq :bd!<CR>
+imap jj <C-c>
+:set ignorecase
+:set smartcase
+nnoremap <leader>d "_d
+xnoremap <leader>d "_d
+xnoremap <leader>p "_dP
+map <Space>lf :vsc Edit.FormatDocument<CR>
+map <Space>lr :vsc Edit.RemoveAndSort<CR>
+map <Space>le :vsc View.NextError<CR>
+map <Space>lta :vsc TestExplorer.RunAllTests<CR>
+map <Space>ltr :vsc TestExplorer.RepeatLastRun<CR>
+map <Space>ltd :vsc TestExplorer.DebugSelectedTests<CR>
+map <Space>lts :vsc TestExplorer.RunSelectedTests<CR>
+"map <Space>f :vsc View.SolutionExplorer<CR>
+map <Space>f :csx Solution<CR>
+map <Space>n :vsc File.NewFile<CR>
+map <Space>t :vsc Edit.GoToAll<CR>
+map <Space>p :vsc Window.QuickLaunch<CR>
+map <c-j> :vsc Edit.LineDown<CR>
+map <c-k> :vsc Edit.LineUp<CR>
+"Jump to line beginning:
+nmap <Space>hl gS:vsc Tools.InvokePeasyMotionJumpToLineBegining<CR>
+nmap <Space>hw gS:vsc Tools.InvokePeasyMotion<CR>
+nmap <Tab> :tabnext<CR>
+nmap <S-Tab> :tabprev<CR>
+map qq :bd!<CR>

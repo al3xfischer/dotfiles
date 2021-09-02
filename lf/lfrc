@@ -1,0 +1,12 @@
+map e $code %f% -n
+map E $code %f% -r
+map gt $nvim ~\todo.md
+map gl cd ~/Downloads
+map gi cd ~/itm
+map gd cd ~/Desktop
+map gr cd /
+map gp cd ~/projects
+map st :set sortby time; set info time; set reverse!
+map <enter> open
+map w $powershell
+map D delete %f%

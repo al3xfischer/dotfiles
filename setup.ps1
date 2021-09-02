@@ -1,0 +1,1 @@
+[System.Environment]::SetEnvironmentVariable('XDG_CONFIG_HOME', 'C:/Users/Alex/.config',[System.EnvironmentVariableTarget]::User)
