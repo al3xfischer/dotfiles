@@ -10,8 +10,8 @@ The configuration for the [GitHub CLI](https://github.com/cli/cli)
 
 ## nvim
 
-My [Neovim](https://github.com/neovim/neovim) settings.
-For my plugins us use [packer.nvim](https://github.com/wbthomason/packer.nvim)
+My [Neovim](https://github.com/neovim/neovim) settings.  
+For my plugins I use [packer.nvim](https://github.com/wbthomason/packer.nvim)
 
 ## scoop 
 
