@@ -4,3 +4,4 @@ git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data
 
 nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
 
+cp -Recurse C:\Users\Alex\.config\lf $env:LOCALAPPDATA/
