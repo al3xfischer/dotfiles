@@ -12,7 +12,7 @@ map('n','gh','<cmd>lua vim.lsp.buf.hover()<CR>',{})
 map('n','<C-k>','<cmd>lua vim.lsp.buf.signature_help()<CR>',{})
 map('n','<C-n>','<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>',{})
 
-map('n','<leader>vrc',":lua require('al3xfischer.terminal.telescope').search_dotfiles()<CR>",{noremap = true, silent = true})
+map('n','<leader>vrc',":lua require('al3xfischer.terminal.plugins.telescope').search_dotfiles()<CR>",{noremap = true, silent = true})
 map('n','<leader>lvrc',":so $MYVIMRC<CR>",{noremap = true, silent = true})
 
 map('n','<leader>ff',"<cmd>Telescope file_browser<CR>",{noremap = true, silent = true})
@@ -25,7 +25,7 @@ map('t','<Esc>',"<C-\\><C-n>",{noremap = true, silent = true})
 map('n','<leader>n',":tabnew<CR>",{silent = true})
 
 map('n','<C-z>',":ToggleTerminal<CR>",{})
-map('t','<C-z>',"<C-\\><C-n>:TogglerTerminal<CR>",{})
+map('t','<C-z>',"<C-\\><C-n>:ToggleTerminal<CR>",{})
 
 map('n','<leader>dl',":call vimspector#Launch()<CR>",{})
 map('n','<leader>dr',"<cmd>VimspectorReset<CR>",{})

@@ -28,9 +28,3 @@ require 'trouble'.setup{}
 
 -- hop
 require 'hop'.setup{}
-
--- orgmode
-require 'orgmode'.setup{
-	org_agenda_files = { '~/org-mode/**/*' },
-	org_default_notes_file = '~/org-mode/todo.org',
-}

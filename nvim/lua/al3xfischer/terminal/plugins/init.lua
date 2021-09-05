@@ -8,7 +8,6 @@ end
 
 local packer = require('packer')
 
-require 'al3xfischer.terminal.plugins.config'
 
 packer.startup(function() 
 
@@ -77,6 +76,11 @@ packer.startup(function()
     use 'ryanoasis/vim-devicons'
 
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+
+    require 'al3xfischer.terminal.plugins.config'
+    require 'al3xfischer.terminal.plugins.evil_lualine'
+    require 'al3xfischer.terminal.plugins.lsp_config'
+    require 'al3xfischer.terminal.plugins.telescope'
 
 end)
 
