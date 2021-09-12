@@ -8,15 +8,22 @@ lsp.omnisharp.setup{
         cmd = { omnisharp_bin , "--languageserver", "--hostPID", tostring(pid) },
 }
 
--- lsp.gopls.setup{
--- }
+ lsp.gopls.setup{
+ }
 
 lsp.pyright.setup{}
 lsp.tsserver.setup{}
 lsp.html.setup{}
 lsp.svelte.setup{
-    cmd = {"svelteserver", "--stdio" },
-    filetypes = {"svelte"},
+    cmd = {"svelteserver.cmd", "--stdio" },
+	settings = {
+		
+	}
+    --filetypes = {"svelte"},
 --    root_dir = root_pattern("package.json", ".git"),
 }
 lsp.vuels.setup{}
+
+lsp.zeta_note.setup{
+  --cmd = {'C:/Users/Alex/language_servers/zeta-note/zeta-note-windows.exe'}
+}
