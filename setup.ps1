@@ -1,7 +1,17 @@
 [System.Environment]::SetEnvironmentVariable('XDG_CONFIG_HOME', 'C:/Users/Alex/.config',[System.EnvironmentVariableTarget]::User)
 
-git clone https://github.com/wbthomason/packer.nvim "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"
+$path = "$env:LOCALAPPDATA\nvim-data\site\pack\packer\start\packer.nvim"
 
-nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync'
+If (!(test-path $path))
+{
+	git clone https://github.com/wbthomason/packer.nvim $path
+}
 
-cp -Recurse C:\Users\Alex\.config\lf $env:LOCALAPPDATA/
+try {
+	nvim --headless -c 'autocmd User PackerComplete quitall' -c 'PackerSync' -c q
+}
+catch {
+	echo 'Unable to init packer.nvim'
+}
+
+cp -Recurse -Force C:\Users\Alex\.config\lf $env:LOCALAPPDATA/
