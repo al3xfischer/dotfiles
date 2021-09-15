@@ -77,8 +77,9 @@ packer.startup(function()
 
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
+	use {"projekt0n/github-nvim-theme", tag = "v0.0.2"}
+
     require 'al3xfischer.terminal.plugins.config'
-    require 'al3xfischer.terminal.plugins.evil_lualine'
     require 'al3xfischer.terminal.plugins.lsp_config'
     require 'al3xfischer.terminal.plugins.telescope'
 

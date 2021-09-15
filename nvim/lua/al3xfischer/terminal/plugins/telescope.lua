@@ -38,7 +38,7 @@ local M = {}
 M.search_dotfiles = function() 
 	require("telescope.builtin").find_files({
 		prompt_title = " <VimRC >",
-		cwd = "C:/Users/Alex/.config/nvim/",
+		cwd = "~/.config/nvim",
 	})
 end
 

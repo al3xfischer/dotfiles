@@ -29,6 +29,7 @@ require 'trouble'.setup{}
 -- hop
 require 'hop'.setup{}
 
+-- treesitter
 require 'nvim-treesitter.configs'.setup{
 	highlight = {
 		enable = true,
@@ -38,5 +39,14 @@ require 'nvim-treesitter.configs'.setup{
 	},
 	incremental_selection = {
 		enable = true,
+	}
+}
+
+-- github-theme
+require 'github-theme'.setup()
+
+require 'lualine'.setup{
+	options = {
+		theme = 'github',
 	}
 }
