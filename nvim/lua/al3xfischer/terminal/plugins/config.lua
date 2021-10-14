@@ -20,6 +20,7 @@ sources = {
   { name = 'calc' },
   { name = 'nvim_lua' },
   { name = 'orgmode' },
+  { name = 'treesitter' },
 }
 })
 
@@ -45,8 +46,50 @@ require 'nvim-treesitter.configs'.setup{
 -- github-theme
 require 'github-theme'.setup()
 
+-- lualine
 require 'lualine'.setup{
 	options = {
 		theme = 'github',
 	}
 }
+
+-- rust-tools
+
+local ra_options = {
+	tools = {
+		autoSetHints = true,
+		hover_with_actions = true,
+		runnables = {
+			use_telescope = true
+		},
+		inlay_hints = {
+			only_current_line = false,
+			show_parameter_hints = true,
+			highlight = "Comment",
+		},
+		server = {
+			settings = { ["rust_analyzer"] = { command = "clippy" } }
+		}
+	}
+}
+
+--rust tools
+require 'rust-tools'.setup(ra_options)
+
+-- lspsaga
+local saga = require'lspsaga'
+saga.init_lsp_saga {
+	border_style = "double",
+	code_action_keys = {
+		quit = '<C-c>',
+	},
+	code_action_prompt = {
+		enable = false,
+		sign = false,
+		sign_priority= 10,
+		Virtual_text  =false,
+	}
+}
+
+-- nvim-comment
+require('nvim_comment').setup({create_mappings = false})

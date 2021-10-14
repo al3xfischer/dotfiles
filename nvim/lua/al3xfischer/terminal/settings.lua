@@ -16,11 +16,9 @@ vim.opt.ignorecase = true
 vim.o.incsearch = true
 vim.o.hidden = true
 
---vim.cmd('colorscheme gruvbox')
-
-vim.opt.foldmethod = 'expr'
-vim.opt.foldexpr = 'nvim_treesitter#foldexpr()'
-
 vim.o.completeopt = "menuone,noselect"
 vim.o.omnifunc = 'v:lua.vim.lsp.omnifunc'
+
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
 
