@@ -10,20 +10,10 @@ lsp.omnisharp.setup{
 
  lsp.gopls.setup{
  }
-
 lsp.pyright.setup{}
 lsp.tsserver.setup{}
 lsp.html.setup{}
-lsp.svelte.setup{
-    cmd = {"svelteserver.cmd", "--stdio" },
-	settings = {
-		
-	}
-    --filetypes = {"svelte"},
---    root_dir = root_pattern("package.json", ".git"),
-}
+lsp.svelte.setup{}
 lsp.vuels.setup{}
-
-lsp.zeta_note.setup{
-  --cmd = {'C:/Users/Alex/language_servers/zeta-note/zeta-note-windows.exe'}
-}
+lsp.rust_analyzer.setup{}
+lsp.texlab.setup{}

@@ -37,6 +37,7 @@ map("n","<leader>'",":call VSCodeNotify('editor.action.addCommentLine')<CR>",{no
 map("n","<leader>p",":call VSCodeNotify('workbench.action.showCommands')<CR>",{noremap = true, silent = true})
 map("n","<leader>oe",":call VSCodeNotify('extension.executeSQLCommand')<CR>",{noremap = true, silent = true})
 map("n","<leader>od",":call VSCodeNotify('oracleDBObjectExplorer.saveToDatabase')<CR>",{noremap = true, silent = true})
+map("n","<leader>ga",":call VSCodeNotify('keyboard-quickfix.openQuickFix')<CR>",{noremap = true, silent = true})
 map("n","<leader>lf",":call VSCodeNotify('editor.action.formatDocument')<CR>",{noremap = true, silent = true})
 map("n","<leader>ff",":call VSCodeNotify('workbench.view.explorer')<CR>",{noremap = true, silent = true})
 map("n","<leader>oo",":call VSCodeNotify('workbench.view.extension.oracle-db-explorer')<CR>",{noremap = true, silent = true})
@@ -71,3 +72,5 @@ map("n","z5","<Cmd>call VSCodeNotify('editor.foldLevel5')<CR>",{noremap = true, 
 map("n","z6","<Cmd>call VSCodeNotify('editor.foldLevel6')<CR>",{noremap = true, silent = true})
 map("n","z7","<Cmd>call VSCodeNotify('editor.foldLevel7')<CR>",{noremap = true, silent = true})
 map("x","zV","<Cmd>call VSCodeNotify('editor.foldAllExcept')<CR>",{noremap = true, silent = true})
+map("n","<M-j>","<Cmd>call VSCodeNotify('editor.action.moveLinesDownAction')<CR>",{noremap = true, silent = true})
+map("n","<M-k>","<Cmd>call VSCodeNotify('editor.action.moveLinesUpAction')<CR>",{noremap = true, silent = true})

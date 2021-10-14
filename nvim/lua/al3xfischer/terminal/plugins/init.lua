@@ -69,7 +69,7 @@ packer.startup(function()
 
     use 'folke/lsp-colors.nvim'
 
-    use 'glepnir/lspsaga.nvim'
+    use 'al3xfischer/lspsaga.nvim'
 
     use 'hoob3rt/lualine.nvim'
 
@@ -77,8 +77,21 @@ packer.startup(function()
 
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
+	use 'simrat39/rust-tools.nvim'
+
+	use 'hrsh7th/vim-vsnip'
+
+	use 'hrsh7th/cmp-vsnip'
+
+	use 'rust-lang/rust.vim'
+
+	use 'terrortylor/nvim-comment'
+
+	use {"projekt0n/github-nvim-theme", tag = "v0.0.2"}
+
+	use 'dylon/vim-antlr'
+
     require 'al3xfischer.terminal.plugins.config'
-    require 'al3xfischer.terminal.plugins.evil_lualine'
     require 'al3xfischer.terminal.plugins.lsp_config'
     require 'al3xfischer.terminal.plugins.telescope'
 
