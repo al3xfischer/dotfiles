@@ -86,3 +86,5 @@ saga.init_lsp_saga {
 -- nvim-comment
 require('nvim_comment').setup({create_mappings = false})
 
+require 'nvim-treesitter.install'.compilers = { "clang" }
+

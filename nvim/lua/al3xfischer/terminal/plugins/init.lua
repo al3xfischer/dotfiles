@@ -87,7 +87,7 @@ packer.startup(function()
 
 	use 'terrortylor/nvim-comment'
 
-	use {"projekt0n/github-nvim-theme", tag = "v0.0.2"}
+	use 'projekt0n/github-nvim-theme'
 
 	use 'dylon/vim-antlr'
 

@@ -9,19 +9,20 @@ end
 local packer = require('packer')
 
 packer.startup(function() 
+	use 'wbthomason/packer.nvim'
 
-    use 'wbthomason/packer.nvim'
+	use {
+		'asvetliakov/vim-easymotion',
+		as = 'vsc-easymotion'
+	}
 
-    use {
-          'asvetliakov/vim-easymotion',
-          as = 'vsc-easymotion'
-        }
-
-    use 'tpope/vim-surround'
+	use 'tpope/vim-surround'
 end)
 
 local map = vim.api.nvim_set_keymap
 
+map("n","j","gj",{noremap = true})
+map("n","k","gk",{noremap = true})
 map("n","<C-j>",":call VSCodeNotify('workbench.action.navigateDown')<CR>", {noremap = true, silent = true})
 map("x","<C-j>",":call VSCodeNotify('workbench.action.navigateDown')<CR>",{noremap = true, silent = true})
 map("n","<C-k>",":call VSCodeNotify('workbench.action.navigateUp')<CR>",{noremap = true, silent = true})
@@ -31,10 +32,13 @@ map("x","<C-h>",":call VSCodeNotify('workbench.action.navigateLeft')<CR>",{norem
 map("n","<C-l>",":call VSCodeNotify('workbench.action.navigateRight')<CR>",{noremap = true, silent = true})
 map("x","<C-l>",":call VSCodeNotify('workbench.action.navigateRight')<CR>",{noremap = true, silent = true})
 map("n","gr","<cmd>call VSCodeNotify('editor.action.goToReferences')<CR>",{noremap = true, silent = true})
+map("n","<leader>gr",":call VSCodeNotify('editor.action.rename')<CR>",{noremap = true, silent = true})
 map("n","qq",":q!<CR>",{})
 map("n","<leader>s",":w<CR>",{})
-map("n","<leader>'",":call VSCodeNotify('editor.action.addCommentLine')<CR>",{noremap = true, silent = true})
-map("n","<leader>p",":call VSCodeNotify('workbench.action.showCommands')<CR>",{noremap = true, silent = true})
+map("n","'",":VSCodeCommentary<CR>",{noremap = true, silent = true})
+map("x","'",":'<,'>VSCodeCommentary<CR>",{noremap = true, silent = true})
+map("n","<leader>p","<cmd>call VSCodeNotify('workbench.action.showCommands')<CR>",{noremap = true, silent = true})
+map("x","<leader>p","<cmd>call VSCodeNotify('workbench.action.showCommands')<CR>",{noremap = true, silent = true})
 map("n","<leader>oe",":call VSCodeNotify('extension.executeSQLCommand')<CR>",{noremap = true, silent = true})
 map("n","<leader>od",":call VSCodeNotify('oracleDBObjectExplorer.saveToDatabase')<CR>",{noremap = true, silent = true})
 map("n","<leader>ga",":call VSCodeNotify('keyboard-quickfix.openQuickFix')<CR>",{noremap = true, silent = true})
@@ -56,6 +60,7 @@ map("n","<leader>n",":call VSCodeNotify('workbench.action.files.newUntitledFile'
 map("n","<leader>gt",":call VSCodeNotify('workbench.action.tasks.runTask','opentodo')<CR>",{noremap = true, silent = true})
 map("n","<leader>hw","<Plug>(easymotion-bd-w)",{})
 map("n","<leader>hl","<Plug>(easymotion-bd-jk)",{})
+map("n","<leader>hc","<Plug>(easymotion-bd-f)",{})
 map("n","z=","<Cmd>call VSCodeNotify('keyboard-quickfix.openQuickFix')<CR>",{noremap = true, silent = true})
 map("n","za","<Cmd>call VSCodeNotify('editor.toggleFold')<CR>",{noremap = true, silent = true})
 map("n","zR","<Cmd>call VSCodeNotify('editor.unfoldAll')<CR>",{noremap = true, silent = true})

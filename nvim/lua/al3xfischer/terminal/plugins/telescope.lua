@@ -13,9 +13,10 @@ require('telescope').setup {
         mappings = {
             i = {
                 ["<C-x>"] = false,
-                ["<C-q>"] = actions.smart_send_to_qflist,
+                ["<C-q>"] = actions.add_selected_to_qflist,
                 ["<C-j>"] = actions.move_selection_next,
                 ["<C-k>"] = actions.move_selection_previous,
+				["<C-z>"] = actions.close,
                 },
             n = {
                 ["<C-w>"] = actions.smart_send_to_qflist,
@@ -25,6 +26,7 @@ require('telescope').setup {
             preview_cutoff = 80
         }
     },
+    file_ignore_patterns = { "node_modules", "target" },
     extensions = {
         fzy_native = {
             override_generic_sorter = false,
