@@ -54,6 +54,8 @@ packer.startup(function()
 
     use 'hrsh7th/cmp-nvim-lua'
 
+    use 'caenrique/nvim-toggle-terminal'
+
     use 'puremourning/vimspector'
 
     use 'kyazdani42/nvim-web-devicons'
@@ -75,19 +77,19 @@ packer.startup(function()
 
     use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
 
-	use {"projekt0n/github-nvim-theme", tag = "v0.0.2"}
-
 	use 'simrat39/rust-tools.nvim'
 
 	use 'hrsh7th/vim-vsnip'
 
 	use 'hrsh7th/cmp-vsnip'
 
-	use 'ray-x/cmp-treesitter'
+	use 'rust-lang/rust.vim'
 
 	use 'terrortylor/nvim-comment'
 
-	use 'rust-lang/rust.vim'
+	use 'projekt0n/github-nvim-theme'
+
+	use 'dylon/vim-antlr'
 
     require 'al3xfischer.terminal.plugins.config'
     require 'al3xfischer.terminal.plugins.lsp_config'
