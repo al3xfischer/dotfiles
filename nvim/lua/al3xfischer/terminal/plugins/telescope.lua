@@ -6,17 +6,15 @@ require('telescope').setup {
         file_sorter = require('telescope.sorters').get_fzy_sorter,
         prompt_prefix = ' >',
         color_devicons = true,
-	preview = { check_mime_type = false },
         file_previewer   = require('telescope.previewers').vim_buffer_cat.new,
         grep_previewer   = require('telescope.previewers').vim_buffer_vimgrep.new,
         qflist_previewer = require('telescope.previewers').vim_buffer_qflist.new,
         mappings = {
             i = {
                 ["<C-x>"] = false,
-                ["<C-q>"] = actions.add_selected_to_qflist,
+                ["<C-q>"] = actions.smart_send_to_qflist,
                 ["<C-j>"] = actions.move_selection_next,
                 ["<C-k>"] = actions.move_selection_previous,
-				["<C-z>"] = actions.close,
                 },
             n = {
                 ["<C-w>"] = actions.smart_send_to_qflist,
@@ -26,22 +24,33 @@ require('telescope').setup {
             preview_cutoff = 80
         }
     },
-    file_ignore_patterns = { "node_modules", "target" },
+	pickers = {
+		live_grep = {
+			theme = "ivy",
+		},
+		find_files = {
+			theme = "ivy",
+		},
+	},
     extensions = {
         fzy_native = {
             override_generic_sorter = false,
             override_file_sorter = true,
-        }
+        },
+		file_browser = {
+			theme = "ivy",
+		},
     }
 }
 
 require('telescope').load_extension('fzy_native')
+require('telescope').load_extension('file_browser')
 
 local M = {}
 M.search_dotfiles = function() 
 	require("telescope.builtin").find_files({
 		prompt_title = " <VimRC >",
-		cwd = "C:/Users/Alex/.config/nvim/",
+		cwd = "~/.config/nvim",
 	})
 end
 
