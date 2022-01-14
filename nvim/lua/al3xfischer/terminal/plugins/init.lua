@@ -89,7 +89,7 @@ packer.startup(function()
 
 	use 'projekt0n/github-nvim-theme'
 
-	use 'dylon/vim-antlr'
+	use 'nvim-telescope/telescope-file-browser.nvim'
 
     require 'al3xfischer.terminal.plugins.config'
     require 'al3xfischer.terminal.plugins.lsp_config'
