@@ -1,11 +1,10 @@
-
+key
 local map = vim.api.nvim_set_keymap
 
 map('n','<M-p>',":lua require'telescope'.extensions.project.project{}<CR>",	{noremap = true, silent = true})
 map('n','<leader>gr','<cmd>Lspsaga rename<CR>', {silent = true})
 map('n','<leader>ga','<cmd>Lspsaga code_action<CR>', {silent = true})
 map('n','<leader>gd','<cmd>Lspsaga preview_definition<CR>',{})
-map('n','gc','<cmd>CommentToggle<CR>',{silent = true})
 map('n',"'",'<cmd>CommentToggle<CR>',{silent = true})
 map('n','gd','<cmd>lua vim.lsp.buf.definition()<CR>',{})
 map('n','gD','<cmd>lua vim.lsp.buf.declaration()<CR>',{})
