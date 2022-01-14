@@ -25,13 +25,10 @@ require('telescope').setup {
         }
     },
 	pickers = {
-		find_files = {
-			theme = "ivy",
-		},
 		live_grep = {
 			theme = "ivy",
 		},
-		file_browser = {
+		find_files = {
 			theme = "ivy",
 		},
 	},
@@ -40,6 +37,9 @@ require('telescope').setup {
             override_generic_sorter = false,
             override_file_sorter = true,
         },
+		file_browser = {
+			theme = "ivy",
+		},
     }
 }
 
