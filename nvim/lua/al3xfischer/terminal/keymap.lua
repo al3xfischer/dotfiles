@@ -1,4 +1,4 @@
-key
+
 local map = vim.api.nvim_set_keymap
 
 map('n','<M-p>',":lua require'telescope'.extensions.project.project{}<CR>",	{noremap = true, silent = true})
