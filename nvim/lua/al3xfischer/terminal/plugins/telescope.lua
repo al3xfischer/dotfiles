@@ -3,6 +3,7 @@ local actions = require('telescope.actions')
 require('telescope').load_extension('project')
 require('telescope').setup {
     defaults = {
+		file_ignore_patterns = { "target" },
         file_sorter = require('telescope.sorters').get_fzy_sorter,
         prompt_prefix = ' >',
         color_devicons = true,
@@ -11,10 +12,11 @@ require('telescope').setup {
         qflist_previewer = require('telescope.previewers').vim_buffer_qflist.new,
         mappings = {
             i = {
-                ["<C-x>"] = false,
+                -- ["<C-x>"] = false,
                 ["<C-q>"] = actions.smart_send_to_qflist,
                 ["<C-j>"] = actions.move_selection_next,
                 ["<C-k>"] = actions.move_selection_previous,
+				["<C-x>"] = actions.file_vsplit,
                 },
             n = {
                 ["<C-w>"] = actions.smart_send_to_qflist,

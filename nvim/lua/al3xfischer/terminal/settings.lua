@@ -16,6 +16,7 @@ vim.opt.smartcase = true
 vim.opt.ignorecase = true
 vim.o.incsearch = true
 vim.o.hidden = true
+vim.o.mouse = 'a'
 
 vim.opt.shellxquote= ''
 vim.opt.shellquote= ''
@@ -42,3 +43,4 @@ augroup ReplaceNetrw
 augroup END
 ]],
 false)
+

@@ -54,6 +54,8 @@ packer.startup(function()
 
     use 'hrsh7th/cmp-nvim-lua'
 
+	use 'ray-x/cmp-treesitter'
+
     use 'caenrique/nvim-toggle-terminal'
 
     use 'puremourning/vimspector'
@@ -69,7 +71,7 @@ packer.startup(function()
 
     use 'folke/lsp-colors.nvim'
 
-    use 'al3xfischer/lspsaga.nvim'
+    use 'tami5/lspsaga.nvim'
 
     use 'hoob3rt/lualine.nvim'
 
@@ -90,6 +92,10 @@ packer.startup(function()
 	use 'projekt0n/github-nvim-theme'
 
 	use 'nvim-telescope/telescope-file-browser.nvim'
+
+	use 'onsails/lspkind-nvim'
+
+	use 'onsails/diaglist.nvim'
 
     require 'al3xfischer.terminal.plugins.config'
     require 'al3xfischer.terminal.plugins.lsp_config'

@@ -7,12 +7,12 @@ map gi cd ~/itm
 map gd cd ~/Desktop
 map gr cd /
 map gp cd ~/projects
+map gwp cd /mnt/c/Users/Alex/projects/
+map gwp cd /mnt/c/Users/Alex/projects/
 map st :set sortby time; set info time; set reverse!
 map <enter> open
-map w $powershell
+map w $bash
 map D delete $env:f
-map ö $ii $env:pwd
-map ü $%shell%
 map u mkdir
 
 set drawbox

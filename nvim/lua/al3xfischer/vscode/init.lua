@@ -17,8 +17,14 @@ packer.startup(function()
 	}
 
 	use 'tpope/vim-surround'
+
+    use {
+      'phaazon/hop.nvim',
+      as = 'hop',
+    }
 end)
 
+require 'hop'.setup{}
 local map = vim.api.nvim_set_keymap
 
 map("n","j","gj",{noremap = true})
@@ -61,6 +67,7 @@ map("n","<leader>gt",":call VSCodeNotify('workbench.action.tasks.runTask','opent
 map("n","<leader>hw","<Plug>(easymotion-bd-w)",{})
 map("n","<leader>hl","<Plug>(easymotion-bd-jk)",{})
 map("n","<leader>hc","<Plug>(easymotion-bd-f)",{})
+map("n","<leader>ot",":call VSCodeNotify('workbench.action.quickOpen')<CR>",{noremap = true, silent = true})
 map("n","z=","<Cmd>call VSCodeNotify('keyboard-quickfix.openQuickFix')<CR>",{noremap = true, silent = true})
 map("n","za","<Cmd>call VSCodeNotify('editor.toggleFold')<CR>",{noremap = true, silent = true})
 map("n","zR","<Cmd>call VSCodeNotify('editor.unfoldAll')<CR>",{noremap = true, silent = true})

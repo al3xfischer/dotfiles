@@ -1,9 +1,10 @@
-
 -- -------
 -- cmp
 -- -------
 
 local cmp = require'cmp'
+local lspkind = require'lspkind'
+
 cmp.setup({
 snippet = {
   expand = function(args)
@@ -20,7 +21,14 @@ sources = {
   { name = 'calc' },
   { name = 'nvim_lua' },
   { name = 'vsnip' },
-}
+  { name = 'treesitter' },
+},
+formatting = {
+	format = lspkind.cmp_format({
+		-- with_text = false,
+		maxwidth= 50,
+	}),s
+},
 })
 
 -- trouble
@@ -42,7 +50,8 @@ require 'nvim-treesitter.configs'.setup{
 }
 
 -- github-theme
-require 'github-theme'.setup()
+require 'github-theme'.setup({
+})
 
 -- lualine
 require 'lualine'.setup{
@@ -63,11 +72,11 @@ local opts = {
              only_current_line = false,
              show_parameter_hints = true,
              highlight = "Comment",
-         }
+         },
      }
 }
 
-require('rust-tools').setup{}
+require('rust-tools').setup(opts)
 --
 local saga = require'lspsaga'
 saga.init_lsp_saga {
@@ -88,3 +97,10 @@ require('nvim_comment').setup({create_mappings = false})
 
 require 'nvim-treesitter.install'.compilers = { "clang" }
 
+--minimap
+vim.g.minimap_auto_start = 1
+vim.g.minimap_highlight_search = 1
+vim.g.minimap_highlight_range = 1
+
+-- diaglist
+require("diaglist").init({})
