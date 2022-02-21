@@ -22,3 +22,12 @@ vim.o.omnifunc = 'v:lua.vim.lsp.omnifunc'
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
+vim.api.nvim_exec(
+[[
+augroup ReplaceNetrw
+    autocmd VimEnter * silent! autocmd! FileExplorer
+    autocmd StdinReadPre * let s:std_in=1
+    autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists("s:std_in") | call luaeval("require('telescope.builtin').find_files({cwd = _A})", argv()[0]) | endif
+augroup END
+]],
+false)

@@ -36,13 +36,14 @@ packer.startup(function()
 
     use 'nvim-telescope/telescope-fzy-native.nvim'
 
-    use 'morhetz/gruvbox'
+    -- use 'morhetz/gruvbox'
 
     use {
       "hrsh7th/nvim-cmp",
       requires = {
         "hrsh7th/vim-vsnip",
         "hrsh7th/cmp-buffer",
+		"kitagry/vs-snippets",
       }
     }
 
@@ -69,7 +70,7 @@ packer.startup(function()
 
     use 'folke/lsp-colors.nvim'
 
-    use 'al3xfischer/lspsaga.nvim'
+    use { 'tami5/lspsaga.nvim', branch = 'nvim6.0' }
 
     use 'hoob3rt/lualine.nvim'
 

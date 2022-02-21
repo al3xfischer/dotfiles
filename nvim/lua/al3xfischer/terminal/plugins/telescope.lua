@@ -4,6 +4,7 @@ require('telescope').load_extension('project')
 require('telescope').setup {
     defaults = {
         file_sorter = require('telescope.sorters').get_fzy_sorter,
+		file_ignore_patterns = { "target" },
         prompt_prefix = ' >',
         color_devicons = true,
         file_previewer   = require('telescope.previewers').vim_buffer_cat.new,

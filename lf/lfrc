@@ -1,19 +1,19 @@
 map e $code $env:f -n
 map E $code $env:f -r
-map n $nvim $env:f
+map t $nvim $f
+map T $nvim $f +'cd %'
+map b $brave $f
 map gt $nvim \Users\Alex\todo.md
 map gl cd ~/Downloads
 map gi cd ~/itm
 map gd cd ~/Desktop
 map gr cd /
 map gp cd ~/projects
+map gwp cd /mnt/c/Users/Alex/projects/
 map st :set sortby time; set info time; set reverse!
 map <enter> open
-map w $powershell
-map D delete $env:f
-map ö $ii $env:pwd
-map ü $%shell%
+map w $$SHELL
+map D $rm $f
 map u mkdir
 
 set drawbox
-set shell powershell.exe
