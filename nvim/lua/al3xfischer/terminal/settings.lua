@@ -15,6 +15,7 @@ vim.opt.smartcase = true
 vim.opt.ignorecase = true
 vim.o.incsearch = true
 vim.o.hidden = true
+vim.o.mouse = 'a'
 
 vim.o.completeopt = "menuone,noselect"
 vim.o.omnifunc = 'v:lua.vim.lsp.omnifunc'
