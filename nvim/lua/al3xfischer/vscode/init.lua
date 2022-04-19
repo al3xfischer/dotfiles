@@ -11,17 +11,14 @@ local packer = require('packer')
 packer.startup(function() 
 	use 'wbthomason/packer.nvim'
 
-	use {
-		'asvetliakov/vim-easymotion',
-		as = 'vsc-easymotion'
-	}
+	-- use {
+	-- 	'ChristianChiarulli/vscode-easymotion',
+	-- 	as = 'vsc-easymotion'
+	-- }
 
 	use 'tpope/vim-surround'
 
-    use {
-      'phaazon/hop.nvim',
-      as = 'hop',
-    }
+	use 'phaazon/hop.nvim'
 end)
 
 require 'hop'.setup{}
@@ -29,6 +26,7 @@ local map = vim.api.nvim_set_keymap
 
 map("n","j","gj",{noremap = true})
 map("n","k","gk",{noremap = true})
+map("n","<C-J>","i<CR><Esc>",{})
 map("n","<C-j>",":call VSCodeNotify('workbench.action.navigateDown')<CR>", {noremap = true, silent = true})
 map("x","<C-j>",":call VSCodeNotify('workbench.action.navigateDown')<CR>",{noremap = true, silent = true})
 map("n","<C-k>",":call VSCodeNotify('workbench.action.navigateUp')<CR>",{noremap = true, silent = true})
@@ -64,6 +62,8 @@ map("n","<leader>ltd",":call VSCodeNotify('dotnet.test.debugTestsInContext')<CR>
 map("n","<leader>z",":call VSCodeNotify('workbench.action.toggleZenMode')<CR>",{noremap = true, silent = true})
 map("n","<leader>n",":call VSCodeNotify('workbench.action.files.newUntitledFile')<CR>",{noremap = true, silent = true})
 map("n","<leader>gt",":call VSCodeNotify('workbench.action.tasks.runTask','opentodo')<CR>",{noremap = true, silent = true})
+
+map("n","<leader>ho","<Plug>(easymotion-overwin-w)",{})
 map("n","<leader>hw","<Plug>(easymotion-bd-w)",{})
 map("n","<leader>hl","<Plug>(easymotion-bd-jk)",{})
 map("n","<leader>hc","<Plug>(easymotion-bd-f)",{})

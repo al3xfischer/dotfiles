@@ -58,9 +58,15 @@ packer.startup(function()
 
     use 'caenrique/nvim-toggle-terminal'
 
-    use 'puremourning/vimspector'
+    -- use 'puremourning/vimspector'
 
     use 'kyazdani42/nvim-web-devicons'
+	use {
+		'kyazdani42/nvim-tree.lua',
+		requires = {
+		  'kyazdani42/nvim-web-devicons', -- optional, for file icon
+		},
+	}
 
     use { 
           'folke/trouble.nvim',
@@ -97,10 +103,27 @@ packer.startup(function()
 
 	use 'onsails/diaglist.nvim'
 
+	-- use 'lervag/vimtex'
+
+	use 'hrsh7th/cmp-omni'
+
+	-- using packer.nvim
+	use {'akinsho/bufferline.nvim', tag = "*", requires = 'kyazdani42/nvim-web-devicons'}
+
+	use 'windwp/nvim-autopairs'
+
+	use {
+              'NvChad/extensions',
+              config = function ()
+                vim.schedule_wrap(require("nvchad.terminal").init())
+              end
+            }
+
+	use 'NvChad/NvChad'
+
     require 'al3xfischer.terminal.plugins.config'
     require 'al3xfischer.terminal.plugins.lsp_config'
     require 'al3xfischer.terminal.plugins.telescope'
-
 end)
 
 

@@ -22,6 +22,7 @@ sources = {
   { name = 'nvim_lua' },
   { name = 'vsnip' },
   { name = 'treesitter' },
+  { name = 'omni' },
 },
 formatting = {
 	format = lspkind.cmp_format({
@@ -49,14 +50,14 @@ require 'nvim-treesitter.configs'.setup{
 	}
 }
 
--- github-theme
+--github-theme
 require 'github-theme'.setup({
 })
 
--- lualine
+--lualine
 require 'lualine'.setup{
 	options = {
-		theme = 'github',
+		theme = 'nightfly',
 	}
 }
 
@@ -76,7 +77,7 @@ local opts = {
      }
 }
 
-require('rust-tools').setup(opts)
+-- requirruste('rust-tools').setup(opts)
 --
 local saga = require'lspsaga'
 saga.init_lsp_saga {
@@ -95,12 +96,27 @@ saga.init_lsp_saga {
 -- nvim-comment
 require('nvim_comment').setup({create_mappings = false})
 
+-- treesitter
 require 'nvim-treesitter.install'.compilers = { "clang" }
 
---minimap
-vim.g.minimap_auto_start = 1
-vim.g.minimap_highlight_search = 1
-vim.g.minimap_highlight_range = 1
+-- bufferline
+require('bufferline').setup{
+	options = {
+		modified_icon = '●',
+		numbers = 'ordinal',
+		color_icons = true,
+		separator_style = 'slant',
+		diagnostics = 'nvim_lsp',
+		offsets = {
+			{
+				filetype = "NvimTree",
+				text = "File Explorer",
+				highlight = "Directory",
+				text_align = "left"
+			}
+		}
+	}
+}
 
--- diaglist
-require("diaglist").init({})
+-- nvim-tree
+require('nvim-tree').setup{}

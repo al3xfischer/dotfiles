@@ -17,5 +17,3 @@ map('n','<Tab>',':tabnext<CR>',{})
 map('n','<S-Tab>','tabprev<CR>',{})
 map('n','<leader>ö',':<C-u>call append(line("."),   repeat([""], v:count1))<CR>',{})
 map('n','<leader>Ö',':<C-u>call append(line(".")-1, repeat([""], v:count1))<CR>',{})
-
-vim.g.mouse = 'a'
