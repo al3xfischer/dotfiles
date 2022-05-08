@@ -112,7 +112,7 @@ require('bufferline').setup{
 				filetype = "NvimTree",
 				text = "File Explorer",
 				highlight = "Directory",
-				text_align = "left"
+				text_align = "center"
 			}
 		}
 	}
@@ -120,3 +120,9 @@ require('bufferline').setup{
 
 -- nvim-tree
 require('nvim-tree').setup{}
+
+-- autopairs
+require('nvim-autopairs').setup{}
+
+-- fterm
+require('FTerm').setup({cmd='pwsh.exe -nologo'})

@@ -1,0 +1,43 @@
+set surround
+set commentary
+set easymotion
+set clipboard=unnamed
+set NERDTree
+
+let mapleader = " "
+
+map <Leader>hw <Plug>(easymotion-bd-w)
+map <Leader>hl <Plug>(easymotion-bd-jk)
+map <Leader>hc <Plug>(easymotion-s)
+map <Leader>s :w<CR>
+map <Leader>lr <Action>(Console.Jdbc.Execute)
+map <Leader>ld <Action>(Console.Jdbc.Debug)
+map <Leader>lf <Action>(ReformatCode)
+map <Leader>to <Action>(ActivateTODOToolWindow)
+map <Leader>lc <Action>(RenameElement)
+map <Leader>lE <Action>(GotoPreviousError)
+map <Leader>le <Action>(GotoNextError)
+map <Leader>og <Action>(FindInPath)
+map <Leader>ot <Action>(GotoFile)
+map <Leader>a ggVG
+map <Leader>ö <Action>(EditorStartNewLine)
+map <Leader>Ö <Action>(EditorStartNewLineBefore)
+map <Leader>n <Action>(Jdbc.OpenConsole.New)
+nmap <Leader>p <Action>(SearchEverywhere)
+map <Leader>ff :NERDTreeToggle<CR>
+map <C-k> <Action>(DatabaseView.Tools.SubmitChanges)
+nmap <C-v> p
+map <C-c> yy
+imap jj <Esc>
+map gd <Action>(GotoDeclaration)
+map gh <Action>(ShowErrorDescription)
+
+nmap Q  :%d<CR> <bar> :bd!<CR>
+nmap qq  :bd!<CR>
+nmap ' `
+map <Tab> :tabnext<CR>
+map <S-Tab> :tabprev<CR>
+nmap == <Action>(CommentByLineComment)
+vmap == <Action>(CommentByLineComment)
+map <A-j> <Action>(MoveLineDown)
+map <A-k> <Action>(MoveLineUp)

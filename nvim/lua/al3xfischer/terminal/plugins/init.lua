@@ -121,6 +121,8 @@ packer.startup(function()
 
 	use 'NvChad/NvChad'
 
+	use 'numToStr/FTerm.nvim'
+
     require 'al3xfischer.terminal.plugins.config'
     require 'al3xfischer.terminal.plugins.lsp_config'
     require 'al3xfischer.terminal.plugins.telescope'
