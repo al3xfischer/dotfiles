@@ -61,12 +61,12 @@ packer.startup(function()
     -- use 'puremourning/vimspector'
 
     use 'kyazdani42/nvim-web-devicons'
-	use {
-		'kyazdani42/nvim-tree.lua',
-		requires = {
-		  'kyazdani42/nvim-web-devicons', -- optional, for file icon
-		},
-	}
+	-- use {
+	-- 	'kyazdani42/nvim-tree.lua',
+	-- 	requires = {
+	-- 	  'kyazdani42/nvim-web-devicons', -- optional, for file icon
+	-- 	},
+	-- }
 
     use { 
           'folke/trouble.nvim',
@@ -122,6 +122,10 @@ packer.startup(function()
 	use 'NvChad/NvChad'
 
 	use 'numToStr/FTerm.nvim'
+
+	use 'ThePrimeagen/harpoon'
+
+	use {'tzachar/cmp-tabnine', run='./install.ps1', requires = 'hrsh7th/nvim-cmp' }
 
     require 'al3xfischer.terminal.plugins.config'
     require 'al3xfischer.terminal.plugins.lsp_config'

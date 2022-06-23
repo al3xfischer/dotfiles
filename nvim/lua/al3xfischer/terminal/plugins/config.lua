@@ -12,7 +12,10 @@ snippet = {
   end,
 },
 mapping = {
-  ['<Tab>'] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true })
+  ['<Tab>'] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
+  ['<CR>'] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
+  ['<C-n>'] = cmp.mapping.select_next_item(),
+  ['<C-p>'] = cmp.mapping.select_prev_item(),
 },
 sources = {
   { name = 'nvim_lsp' },
@@ -23,12 +26,13 @@ sources = {
   { name = 'vsnip' },
   { name = 'treesitter' },
   { name = 'omni' },
+  { name = 'cmp_tabnine'},
 },
 formatting = {
 	format = lspkind.cmp_format({
 		-- with_text = false,
 		maxwidth= 50,
-	}),s
+	}),
 },
 })
 
@@ -119,10 +123,20 @@ require('bufferline').setup{
 }
 
 -- nvim-tree
-require('nvim-tree').setup{}
+-- require('nvim-tree').setup{}
 
 -- autopairs
 require('nvim-autopairs').setup{}
 
 -- fterm
 require('FTerm').setup({cmd='pwsh.exe -nologo'})
+
+-- tabnine AI
+local tabnine = require("cmp_tabnine.config")
+tabnine:setup({
+	max_lines = 1000,
+	max_num_results = 20,
+	sort = true,
+	run_on_every_keystroke = true,
+	snippet_placeholder = "..",
+})

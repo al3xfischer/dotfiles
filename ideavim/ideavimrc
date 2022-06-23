@@ -1,14 +1,15 @@
 set surround
 set commentary
-set easymotion
 set clipboard=unnamed
 set NERDTree
+set number relativenumber
+
 
 let mapleader = " "
 
-map <Leader>hw <Plug>(easymotion-bd-w)
-map <Leader>hl <Plug>(easymotion-bd-jk)
-map <Leader>hc <Plug>(easymotion-s)
+map <Leader>hw <Action>(KJumpAction.Word0)
+map <Leader>hl <Action>(KJumpAction.Line)
+map <Leader>hc <Action>(KJumpAction)
 map <Leader>s :w<CR>
 map <Leader>lr <Action>(Console.Jdbc.Execute)
 map <Leader>ld <Action>(Console.Jdbc.Debug)
@@ -19,18 +20,26 @@ map <Leader>lE <Action>(GotoPreviousError)
 map <Leader>le <Action>(GotoNextError)
 map <Leader>og <Action>(FindInPath)
 map <Leader>ot <Action>(GotoFile)
+map <Leader>od <Action>(GotoClass)
 map <Leader>a ggVG
 map <Leader>ö <Action>(EditorStartNewLine)
 map <Leader>Ö <Action>(EditorStartNewLineBefore)
 map <Leader>n <Action>(Jdbc.OpenConsole.New)
 nmap <Leader>p <Action>(SearchEverywhere)
 map <Leader>ff :NERDTreeToggle<CR>
+map <Leader>dd <Action>(ActivateDatabaseToolWindow)
+map <Leader>vrc :e ~\.config\ideavim\ideavimrc<CR>
+map <Leader>ga <Action>(ShowIntentionActions)
 map <C-k> <Action>(DatabaseView.Tools.SubmitChanges)
-nmap <C-v> p
 map <C-c> yy
+map <C-e> <Action>(FocusEditor)
 imap jj <Esc>
+imap <C-v> <C-o>p
 map gd <Action>(GotoDeclaration)
+map gD <Action>(QuickImplementations)
 map gh <Action>(ShowErrorDescription)
+map ga <Action>(ProblemsView.QuickFixes)
+map <Leader>fr <Action>(RenameFile)
 
 nmap Q  :%d<CR> <bar> :bd!<CR>
 nmap qq  :bd!<CR>
@@ -64,8 +73,10 @@ sethandler <C-P> a:vim
 sethandler <C-Q> a:vim
 sethandler <C-R> a:vim
 sethandler <C-S> a:vim
+sethandler <C-T> a:vim
 sethandler <C-U> a:vim
 sethandler <C-V> a:vim
 sethandler <C-W> a:vim
 sethandler <C-X> a:vim
 sethandler <C-Y> a:vim
+sethandler <C-b> a:vim
