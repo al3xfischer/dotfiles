@@ -3,7 +3,6 @@ set commentary
 set clipboard=unnamed
 set NERDTree
 set number relativenumber
-
 
 let mapleader = " "
 
@@ -50,6 +49,62 @@ nmap == <Action>(CommentByLineComment)
 vmap == <Action>(CommentByLineComment)
 map <A-j> <Action>(MoveLineDown)
 map <A-k> <Action>(MoveLineUp)
+
+
+map ma mA
+map mb mB
+map mc mC
+map md mD
+map me mE
+map mf mF
+map mg mG
+map mh mH
+map mi mI
+map mj mJ
+map mk mK
+map ml mL
+map mm mM
+map mn mN
+map mo mO
+map mp mP
+map mq mQ
+map mr mR
+map ms mS
+map mt mT
+map mu mU
+map mv mV
+map mw mW
+map mx mX
+map my mY
+map mz mZ
+
+map 'a 'A
+map 'b 'B
+map 'c 'C
+map 'd 'D
+map 'e 'E
+map 'f 'F
+map 'g 'G
+map 'h 'H
+map 'i 'I
+map 'j 'J
+map 'k 'K
+map 'l 'L
+map 'm 'M
+map 'n 'N
+map 'o 'O
+map 'p 'P
+map 'q 'Q
+map 'r 'R
+map 's 'S
+map 't 'T
+map 'u 'U
+map 'v 'V
+map 'w 'W
+map 'x 'X
+map 'y 'Y
+map 'z 'Z
+
 
 sethandler <S-Tab> a:vim
 sethandler <C-;> a:vim
