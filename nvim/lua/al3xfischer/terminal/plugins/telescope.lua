@@ -1,7 +1,7 @@
 local action_state = require('telescope.actions.set')
 local actions = require('telescope.actions')
 require('telescope').load_extension('project')
-require('telescope').load_extension('terms') --nvchad terminals
+-- require('telescope').load_extension('terms') --nvchad terminals
 require('telescope').setup {
     defaults = {
 		file_ignore_patterns = { "target" },

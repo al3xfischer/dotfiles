@@ -1,3 +1,5 @@
+
+
 -- -------
 -- cmp
 -- -------
@@ -47,7 +49,7 @@ require 'nvim-treesitter.configs'.setup{
 		enable = true,
 	},
 	indent = {
-		enable = true,
+	  enable = true,
 	},
 	incremental_selection = {
 		enable = true,
@@ -122,14 +124,8 @@ require('bufferline').setup{
 	}
 }
 
--- nvim-tree
--- require('nvim-tree').setup{}
-
 -- autopairs
 require('nvim-autopairs').setup{}
-
--- fterm
-require('FTerm').setup({cmd='pwsh.exe -nologo'})
 
 -- tabnine AI
 local tabnine = require("cmp_tabnine.config")
@@ -140,3 +136,6 @@ tabnine:setup({
 	run_on_every_keystroke = true,
 	snippet_placeholder = "..",
 })
+
+-- Go.nvim
+require('go').setup()

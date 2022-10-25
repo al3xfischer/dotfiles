@@ -14,6 +14,7 @@ map <Leader>lr <Action>(Console.Jdbc.Execute)
 map <Leader>ld <Action>(Console.Jdbc.Debug)
 map <Leader>lf <Action>(ReformatCode)
 map <Leader>to <Action>(ActivateTODOToolWindow)
+map <Leader>tt <Action>(ActivateTerminalToolWindow)
 map <Leader>lc <Action>(RenameElement)
 map <Leader>lE <Action>(GotoPreviousError)
 map <Leader>le <Action>(GotoNextError)
@@ -38,7 +39,9 @@ map gd <Action>(GotoDeclaration)
 map gD <Action>(QuickImplementations)
 map gh <Action>(ShowErrorDescription)
 map ga <Action>(ProblemsView.QuickFixes)
+map gi <Action>(GotoImplementation)
 map <Leader>fr <Action>(RenameFile)
+map vp <Action>(Console.Jdbc.ToggleParameters)
 
 nmap Q  :%d<CR> <bar> :bd!<CR>
 nmap qq  :bd!<CR>
@@ -49,7 +52,7 @@ nmap == <Action>(CommentByLineComment)
 vmap == <Action>(CommentByLineComment)
 map <A-j> <Action>(MoveLineDown)
 map <A-k> <Action>(MoveLineUp)
-
+imap <C-k> <Action>(AcceptTabnineInlineCompletionAction)
 
 map ma mA
 map mb mB
