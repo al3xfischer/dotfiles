@@ -12,7 +12,10 @@ snippet = {
   end,
 },
 mapping = {
-  ['<Tab>'] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true })
+  ['<Tab>'] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
+  ['<CR>'] = cmp.mapping.confirm({ behavior = cmp.ConfirmBehavior.Replace, select = true }),
+  ['<C-n>'] = cmp.mapping.select_next_item(),
+  ['<C-p>'] = cmp.mapping.select_prev_item(),
 },
 sources = {
   { name = 'nvim_lsp' },

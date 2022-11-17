@@ -10,4 +10,3 @@ lsp.svelte.setup{}
 lsp.vuels.setup{}
 lsp.rust_analyzer.setup{}
 lsp.texlab.setup{}
-lsp.csharp_ls.setup{}

@@ -5,7 +5,7 @@ map T $nvim $f +'cd %'
 map b $brave $f
 map gt $nvim \Users\Alex\todo.md
 map gl cd ~/Downloads
-map gi cd ~/itm
+map gi cd /mnt/c/Users/Alex/itm/src
 map gd cd ~/Desktop
 map gr cd /
 map gp cd ~/projects
