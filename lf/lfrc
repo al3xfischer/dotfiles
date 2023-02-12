@@ -12,11 +12,11 @@ map gr cd /
 map gp cd ~/projects
 map gf cd ~/OneDrive/fh/msc_sad
 map st :set sortby time; set info time; set reverse!
-map w $powershell -nologo
+map w $pwsh -nologo
 map D delete $env:f
 map ö $ii $env:pwd
 map u mkdir
 map o $start $env:f
 
 set drawbox
-set shell powershell.exe
+set shell pwsh.exe

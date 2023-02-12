@@ -94,7 +94,9 @@ local packer = require('packer')
 
  	use 'terrortylor/nvim-comment'
 
- 	use 'projekt0n/github-nvim-theme'
+ 	-- use 'projekt0n/github-nvim-theme'
+	use 'ray-x/guihua.lua'
+	use 'olivercederborg/poimandres.nvim'
 
  	use 'nvim-telescope/telescope-file-browser.nvim'
 

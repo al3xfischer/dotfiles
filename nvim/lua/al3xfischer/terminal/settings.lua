@@ -18,21 +18,24 @@ vim.o.incsearch = true
 vim.o.hidden = true
 vim.o.mouse = 'a'
 
-vim.opt.shellxquote= ''
-vim.opt.shellquote= ''
-if vim.fn.has('win32') then
-    vim.opt.shell = 'powershell'
-else 
-    vim.opt.shell = 'pwsh'
-end
-vim.opt.shellcmdflag = '-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;'
-vim.opt.shellredir = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'
-vim.opt.shellpipe = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'
+-- vim.opt.shellxquote= ''
+-- vim.opt.shellquote= ''
+-- if vim.fn.has('win32') then
+--     vim.opt.shell = 'powershell'
+-- else 
+    -- vim.opt.shell = 'pwsh'
+-- end
+-- vim.opt.shellcmdflag = '-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;'
+-- vim.opt.shellredir = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'
+-- vim.opt.shellpipe = '2>&1 | Out-File -Encoding UTF8 %s; exit $LastExitCode'
 
 vim.o.completeopt = "menuone,noselect"
 vim.o.omnifunc = 'v:lua.vim.lsp.omnifunc'
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+
+
+vim.api.nvim_set_hl(0, "Normal", { ctermfg=None,  ctermbg=None })
 
 vim.api.nvim_exec(
 [[
@@ -44,3 +47,4 @@ augroup END
 ]],
 false)
 
+vim.lsp.handlers["textDocument/references"] = require("telescope.builtin").lsp_references

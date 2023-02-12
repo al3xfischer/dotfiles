@@ -32,7 +32,6 @@ map <Leader>vrc :e ~\.config\ideavim\ideavimrc<CR>
 map <Leader>ga <Action>(ShowIntentionActions)
 map <C-k> <Action>(DatabaseView.Tools.SubmitChanges)
 map <C-c> yy
-map <C-e> <Action>(FocusEditor)
 imap jj <Esc>
 imap <C-v> <C-o>p
 map gd <Action>(GotoDeclaration)
@@ -42,6 +41,8 @@ map ga <Action>(ProblemsView.QuickFixes)
 map gi <Action>(GotoImplementation)
 map <Leader>fr <Action>(RenameFile)
 map vp <Action>(Console.Jdbc.ToggleParameters)
+map H ^
+map L $
 
 nmap Q  :%d<CR> <bar> :bd!<CR>
 nmap qq  :bd!<CR>
@@ -50,9 +51,13 @@ map <Tab> :tabnext<CR>
 map <S-Tab> :tabprev<CR>
 nmap == <Action>(CommentByLineComment)
 vmap == <Action>(CommentByLineComment)
+map <A-h> :tabprev<CR>
 map <A-j> <Action>(MoveLineDown)
 map <A-k> <Action>(MoveLineUp)
+map <A-l> :tabnext<CR>
 imap <C-k> <Action>(AcceptTabnineInlineCompletionAction)
+map <C-s> EditorScrollDown
+map <Leader>w '
 
 map ma mA
 map mb mB

@@ -1,4 +1,12 @@
 
+-- theme
+require('poimandres').setup {
+      -- leave this setup function empty for default config
+      -- or refer to the configuration section
+      -- for configuration options
+    }
+
+vim.cmd('colorscheme poimandres')
 
 -- -------
 -- cmp
@@ -57,13 +65,13 @@ require 'nvim-treesitter.configs'.setup{
 }
 
 --github-theme
-require 'github-theme'.setup({
-})
+--require 'github-theme'.setup({})
 
 --lualine
 require 'lualine'.setup{
 	options = {
-		theme = 'nightfly',
+		-- theme = 'nightfly',
+		theme = 'poimandres'
 	}
 }
 
