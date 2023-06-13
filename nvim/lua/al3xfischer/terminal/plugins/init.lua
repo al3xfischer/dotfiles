@@ -121,6 +121,8 @@ local packer = require('packer')
 
  	use 'ray-x/go.nvim'
 
+	use 'epwalsh/obsidian.nvim'
+
  	-- use {
  	  -- "tpope/vim-dadbod",
  	  -- opt = true,

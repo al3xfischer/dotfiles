@@ -53,8 +53,10 @@ require 'trouble'.setup{}
 require 'hop'.setup{}
 
 require 'nvim-treesitter.configs'.setup{
+    ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "c_sharp", "rust", "javascript", "typescript", "css", "markdown", "python", "cpp", "sql", "json5", "yaml", "html" },
 	highlight = {
 		enable = true,
+    	additional_vim_regex_highlighting = { "markdown" },
 	},
 	indent = {
 	  enable = true,
@@ -147,3 +149,13 @@ tabnine:setup({
 
 -- Go.nvim
 require('go').setup()
+
+
+-- Obsidian.nvim
+require("obsidian").setup({
+  dir = "~/Documents/Obsidian Vault/",
+  completion = {
+    nvim_cmp = true, -- if using nvim-cmp, otherwise set to false
+  }
+})
+

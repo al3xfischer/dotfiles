@@ -11,14 +11,14 @@ local packer = require('packer')
 packer.startup(function() 
 	use 'wbthomason/packer.nvim'
 
-	-- use {
-	-- 	'ChristianChiarulli/vscode-easymotion',
-	-- 	as = 'vsc-easymotion'
-	-- }
+	use {
+		'ChristianChiarulli/vscode-easymotion',
+		as = 'vsc-easymotion'
+	}
 
 	use 'tpope/vim-surround'
 
-	use 'phaazon/hop.nvim'
+	-- use 'phaazon/hop.nvim'
 end)
 
 require 'hop'.setup{}
@@ -44,7 +44,7 @@ map("x","==",":'<,'>VSCodeCommentary<CR>",{noremap = true, silent = true})
 map("n","<leader>p","<cmd>call VSCodeNotify('workbench.action.showCommands')<CR>",{noremap = true, silent = true})
 map("x","<leader>p","<cmd>call VSCodeNotify('workbench.action.showCommands')<CR>",{noremap = true, silent = true})
 map("n","<leader>og","<cmd>call VSCodeNotify('workbench.action.showAllSymbols')<CR>",{})
-map("n","<leader>lr",":call VSCodeNotify('extension.executeSQLCommand')<CR>",{noremap = true, silent = true})
+map("n","<leader>lor",":call VSCodeNotify('extension.executeSQLCommand')<CR>",{noremap = true, silent = true})
 map("n","<leader>li",":call VSCodeNotify('editor.action.goToImplementation')<CR>",{noremap = true, silent = true})
 map("n","<leader>od",":call VSCodeNotify('oracleDBObjectExplorer.saveToDatabase')<CR>",{noremap = true, silent = true})
 map("n","<leader>ga",":call VSCodeNotify('keyboard-quickfix.openQuickFix')<CR>",{noremap = true, silent = true})

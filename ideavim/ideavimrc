@@ -2,19 +2,28 @@ set surround
 set commentary
 set clipboard=unnamed
 set NERDTree
-set number relativenumber
+set matchit
+set number
+set ignorecase
+set smartcase
+set sneak
+set quickscope
 
 let mapleader = " "
 
-map <Leader>hw <Action>(KJumpAction.Word0)
 map <Leader>hl <Action>(KJumpAction.Line)
 map <Leader>hc <Action>(KJumpAction)
+map <Leader>hw <Action>(KJumpAction.Word0)
+"map <Leader>hw <Action>(AceWordAction)
+"map <Leader>hl <Action>(AceLineAction)
+"map <Leader>hc <Action>(AceAction)
 map <Leader>s :w<CR>
 map <Leader>lr <Action>(Console.Jdbc.Execute)
 map <Leader>ld <Action>(Console.Jdbc.Debug)
 map <Leader>lf <Action>(ReformatCode)
 map <Leader>to <Action>(ActivateTODOToolWindow)
 map <Leader>tt <Action>(ActivateTerminalToolWindow)
+map vt <Action>(ActivateTerminalToolWindow)
 map <Leader>lc <Action>(RenameElement)
 map <Leader>lE <Action>(GotoPreviousError)
 map <Leader>le <Action>(GotoNextError)
@@ -29,7 +38,9 @@ nmap <Leader>p <Action>(SearchEverywhere)
 map <Leader>ff :NERDTreeToggle<CR>
 map <Leader>dd <Action>(ActivateDatabaseToolWindow)
 map <Leader>vrc :e ~\.config\ideavim\ideavimrc<CR>
+map <Leader>vrr <Action>(IdeaVim.ReloadVimRc.reload )
 map <Leader>ga <Action>(ShowIntentionActions)
+map <leader>z <Action>(ToggleDistractionFreeMode)
 map <C-k> <Action>(DatabaseView.Tools.SubmitChanges)
 map <C-c> yy
 imap jj <Esc>
