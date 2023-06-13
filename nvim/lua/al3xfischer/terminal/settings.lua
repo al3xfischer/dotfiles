@@ -19,9 +19,10 @@ vim.o.mouse = 'a'
 
 vim.o.completeopt = "menuone,noselect"
 vim.o.omnifunc = 'v:lua.vim.lsp.omnifunc'
-
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
+
+vim.api.nvim_set_hl(0, "Normal", { ctermfg=None,  ctermbg=None })
 
 vim.api.nvim_exec(
 [[
@@ -32,3 +33,5 @@ augroup ReplaceNetrw
 augroup END
 ]],
 false)
+
+vim.lsp.handlers["textDocument/references"] = require("telescope.builtin").lsp_references

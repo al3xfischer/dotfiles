@@ -1,3 +1,13 @@
+
+-- theme
+require('poimandres').setup {
+      -- leave this setup function empty for default config
+      -- or refer to the configuration section
+      -- for configuration options
+    }
+
+vim.cmd('colorscheme poimandres')
+
 -- -------
 -- cmp
 -- -------
@@ -26,12 +36,13 @@ sources = {
   { name = 'vsnip' },
   { name = 'treesitter' },
   { name = 'omni' },
+  { name = 'cmp_tabnine'},
 },
 formatting = {
 	format = lspkind.cmp_format({
 		-- with_text = false,
 		maxwidth= 50,
-	}),s
+	}),
 },
 })
 
@@ -42,11 +53,13 @@ require 'trouble'.setup{}
 require 'hop'.setup{}
 
 require 'nvim-treesitter.configs'.setup{
+    ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "c_sharp", "rust", "javascript", "typescript", "css", "markdown", "python", "cpp", "sql", "json5", "yaml", "html" },
 	highlight = {
 		enable = true,
+    	additional_vim_regex_highlighting = { "markdown" },
 	},
 	indent = {
-		enable = true,
+	  enable = true,
 	},
 	incremental_selection = {
 		enable = true,
@@ -54,13 +67,13 @@ require 'nvim-treesitter.configs'.setup{
 }
 
 --github-theme
-require 'github-theme'.setup({
-})
+--require 'github-theme'.setup({})
 
 --lualine
 require 'lualine'.setup{
 	options = {
-		theme = 'nightfly',
+		-- theme = 'nightfly',
+		theme = 'poimandres'
 	}
 }
 
@@ -115,11 +128,34 @@ require('bufferline').setup{
 				filetype = "NvimTree",
 				text = "File Explorer",
 				highlight = "Directory",
-				text_align = "left"
+				text_align = "center"
 			}
 		}
 	}
 }
 
--- nvim-tree
-require('nvim-tree').setup{}
+-- autopairs
+require('nvim-autopairs').setup{}
+
+-- tabnine AI
+local tabnine = require("cmp_tabnine.config")
+tabnine:setup({
+	max_lines = 1000,
+	max_num_results = 20,
+	sort = true,
+	run_on_every_keystroke = true,
+	snippet_placeholder = "..",
+})
+
+-- Go.nvim
+require('go').setup()
+
+
+-- Obsidian.nvim
+require("obsidian").setup({
+  dir = "~/Documents/Obsidian Vault/",
+  completion = {
+    nvim_cmp = true, -- if using nvim-cmp, otherwise set to false
+  }
+})
+

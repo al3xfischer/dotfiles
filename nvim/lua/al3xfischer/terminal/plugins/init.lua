@@ -8,123 +8,138 @@ end
 
 local packer = require('packer')
 
+ packer.startup(function() 
 
-packer.startup(function() 
+     use 'wbthomason/packer.nvim'
 
-    use 'wbthomason/packer.nvim'
+     use 'neovim/nvim-lspconfig' 
 
-    use 'neovim/nvim-lspconfig' 
+     use {
+       'phaazon/hop.nvim',
+       as = 'hop',
+     }
 
-    use {
-      'phaazon/hop.nvim',
-      as = 'hop',
-    }
+     use 'tpope/vim-surround'
+  
+     use {
+         'nvim-lua/popup.nvim',
+         requires = { { 'nvim-lua/plenary.nvim' } }
+     }
+  
+     use {
+       'nvim-telescope/telescope.nvim',
+       requires = { {'nvim-lua/plenary.nvim'} }
+     }
 
-    use 'tpope/vim-surround'
-    
-    use {
-        'nvim-lua/popup.nvim',
-        requires = { { 'nvim-lua/plenary.nvim' } }
-    }
-    
-    use {
-      'nvim-telescope/telescope.nvim',
-      requires = { {'nvim-lua/plenary.nvim'} }
-    }
+     use 'nvim-telescope/telescope-project.nvim'
 
-    use 'nvim-telescope/telescope-project.nvim'
+     use 'nvim-telescope/telescope-fzy-native.nvim'
 
-    use 'nvim-telescope/telescope-fzy-native.nvim'
+     use 'morhetz/gruvbox'
 
-    use 'morhetz/gruvbox'
+     use {
+       "hrsh7th/nvim-cmp",
+       requires = {
+         "hrsh7th/vim-vsnip",
+         "hrsh7th/cmp-buffer",
+       }
+     }
 
-    use {
-      "hrsh7th/nvim-cmp",
-      requires = {
-        "hrsh7th/vim-vsnip",
-        "hrsh7th/cmp-buffer",
-      }
-    }
+     use 'hrsh7th/cmp-calc'
 
-    use 'hrsh7th/cmp-calc'
+     use 'hrsh7th/cmp-nvim-lsp'
 
-    use 'hrsh7th/cmp-nvim-lsp'
+     use 'hrsh7th/cmp-path'
 
-    use 'hrsh7th/cmp-path'
+     use 'hrsh7th/cmp-nvim-lua'
 
-    use 'hrsh7th/cmp-nvim-lua'
+-- 	use 'ray-x/cmp-treesitter'
 
-	use 'ray-x/cmp-treesitter'
+     use 'caenrique/nvim-toggle-terminal'
 
-    use 'caenrique/nvim-toggle-terminal'
+     -- use 'puremourning/vimspector'
 
-    -- use 'puremourning/vimspector'
+     use 'kyazdani42/nvim-web-devicons'
+ 	-- use {
+ 	-- 	'kyazdani42/nvim-tree.lua',
+ 	-- 	requires = {
+ 	-- 	  'kyazdani42/nvim-web-devicons', -- optional, for file icon
+ 	-- 	},
+ 	-- }
 
-    use 'kyazdani42/nvim-web-devicons'
-	use {
-		'kyazdani42/nvim-tree.lua',
-		requires = {
-		  'kyazdani42/nvim-web-devicons', -- optional, for file icon
-		},
-	}
+     use { 
+           'folke/trouble.nvim',
+           config = function ()
+             require'trouble'.setup{}
+           end
+         }
 
-    use { 
-          'folke/trouble.nvim',
-          config = function ()
-            require'trouble'.setup{}
-          end
-        }
+     use 'folke/lsp-colors.nvim'
 
-    use 'folke/lsp-colors.nvim'
+     use 'tami5/lspsaga.nvim'
 
-    use 'tami5/lspsaga.nvim'
+     use 'hoob3rt/lualine.nvim'
 
-    use 'hoob3rt/lualine.nvim'
+     use 'ryanoasis/vim-devicons'
 
-    use 'ryanoasis/vim-devicons'
+     use { 'nvim-treesitter/nvim-treesitter' }
 
-    use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+ 	use 'simrat39/rust-tools.nvim'
 
-	use 'simrat39/rust-tools.nvim'
+ 	use 'hrsh7th/vim-vsnip'
 
-	use 'hrsh7th/vim-vsnip'
+ 	use 'hrsh7th/cmp-vsnip'
 
-	use 'hrsh7th/cmp-vsnip'
+ 	use 'rust-lang/rust.vim'
 
-	use 'rust-lang/rust.vim'
+ 	use 'terrortylor/nvim-comment'
 
-	use 'terrortylor/nvim-comment'
+ 	-- use 'projekt0n/github-nvim-theme'
+	use 'ray-x/guihua.lua'
+	use 'olivercederborg/poimandres.nvim'
 
-	use 'projekt0n/github-nvim-theme'
+ 	use 'nvim-telescope/telescope-file-browser.nvim'
 
-	use 'nvim-telescope/telescope-file-browser.nvim'
+ 	use 'onsails/lspkind-nvim'
 
-	use 'onsails/lspkind-nvim'
+ 	use 'onsails/diaglist.nvim'
 
-	use 'onsails/diaglist.nvim'
+ 	-- use 'lervag/vimtex'
 
-	-- use 'lervag/vimtex'
+ 	use 'hrsh7th/cmp-omni'
 
-	use 'hrsh7th/cmp-omni'
+ 	-- using packer.nvim
+ 	use {'akinsho/bufferline.nvim', tag = "*", requires = 'kyazdani42/nvim-web-devicons'}
 
-	-- using packer.nvim
-	use {'akinsho/bufferline.nvim', tag = "*", requires = 'kyazdani42/nvim-web-devicons'}
+ 	use 'windwp/nvim-autopairs'
 
-	use 'windwp/nvim-autopairs'
+ 	-- use 'numToStr/FTerm.nvim'
 
-	use {
-              'NvChad/extensions',
-              config = function ()
-                vim.schedule_wrap(require("nvchad.terminal").init())
-              end
-            }
+ 	use 'ThePrimeagen/harpoon'
 
-	use 'NvChad/NvChad'
+ 	use {'tzachar/cmp-tabnine', run='./install.ps1', requires = 'hrsh7th/nvim-cmp' }
 
-    require 'al3xfischer.terminal.plugins.config'
-    require 'al3xfischer.terminal.plugins.lsp_config'
-    require 'al3xfischer.terminal.plugins.telescope'
-end)
+ 	use 'ray-x/go.nvim'
+
+	use 'epwalsh/obsidian.nvim'
+
+ 	-- use {
+ 	  -- "tpope/vim-dadbod",
+ 	  -- opt = true,
+ 	  -- requires = {
+ 		-- "kristijanhusak/vim-dadbod-ui",
+ 		-- "kristijanhusak/vim-dadbod-completion",
+ 	  -- },
+ 	  -- config = function()
+ 		-- require("al3xfischer.terminal.plugins.dadbod").setup()
+ 	  -- end,
+ 	  -- cmd = { "DBUIToggle", "DBUI", "DBUIAddConnection", "DBUIFindBuffer", "DBUIRenameBuffer", "DBUILastQueryInfo" },
+ 	-- }
+
+     require 'al3xfischer.terminal.plugins.config'
+     require 'al3xfischer.terminal.plugins.lsp_config'
+     require 'al3xfischer.terminal.plugins.telescope'
+ end)
 
 
 
