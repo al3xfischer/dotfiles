@@ -47,13 +47,13 @@ formatting = {
 })
 
 -- trouble
-require 'trouble'.setup{}
+-- require 'trouble'.setup{}
 
 -- hop
 require 'hop'.setup{}
 
 require 'nvim-treesitter.configs'.setup{
-    ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "rust", "javascript", "typescript", "css", "markdown", "python", "cpp", "sql", "json5", "yaml", "html" },
+	-- ensure_installed = { "c", "lua", "vim", "vimdoc", "query", "rust", "javascript", "typescript", "css", "markdown", "python", "cpp", "sql", "json5", "yaml", "html" },
 	highlight = {
 		enable = true,
     	additional_vim_regex_highlighting = { "markdown" },
@@ -91,22 +91,6 @@ local opts = {
              highlight = "Comment",
          },
      }
-}
-
--- requirruste('rust-tools').setup(opts)
---
-local saga = require'lspsaga'
-saga.init_lsp_saga {
-	border_style = "double",
-	code_action_keys = {
-		quit = '<C-c>',
-	},
-	code_action_prompt = {
-		enable = false,
-		sign = false,
-		sign_priority= 10,
-		Virtual_text  =false,
-	}
 }
 
 -- nvim-comment
@@ -153,7 +137,13 @@ require('go').setup()
 
 -- Obsidian.nvim
 require("obsidian").setup({
-  dir = "C:\\Users\\Alex\\Documents\\Obsidian~Vault",
+  -- dir = "c:\\Users\\Alex\\Documents\\Obsidian~Vault",
+  workspaces = { 
+    {
+      name = "personal",
+      path = "~\\Documents\\Obsidian Vault"
+    }
+  },
   completion = {
     nvim_cmp = true, -- if using nvim-cmp, otherwise set to false
   }

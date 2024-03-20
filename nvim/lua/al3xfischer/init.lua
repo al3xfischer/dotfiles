@@ -6,3 +6,4 @@ if vim.g.vscode then
 else
   require 'al3xfischer.terminal'
 end
+

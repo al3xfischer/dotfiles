@@ -16,7 +16,7 @@ map('n','gi','<cmd>lua vim.lsp.buf.implementation()<CR>',{})
 map('n','gh','<cmd>lua vim.lsp.buf.hover()<CR>',{})
 map('n','gu','<cmd>lua vim.lsp.buf.references()<CR>',{})
 map('n','<C-k>','<cmd>lua vim.lsp.buf.signature_help()<CR>',{})
-map('n','<leader>lf','<cmd>lua vim.lsp.buf.formatting()<CR>',{})
+map('n','<leader>lf','<cmd>lua vim.lsp.buf.format()<CR>',{})
 map('n','<leader>le','<cmd>TroubleToggle<cr>',{})
 map('n','<leader>obs','<cmd>ObsidianQuickSwitch<cr>',{})
 map('n','<leader>obf','<cmd>ObsidianSearch<cr>',{})
@@ -50,3 +50,11 @@ map('t','<M-h>',"<C-\\><C-n><C-w>h",{noremap = true, silent = true})
 map('t','<M-j>',"<C-\\><C-n><C-w>j",{noremap = true, silent = true})
 map('t','<M-k>',"<C-\\><C-n><C-w>k",{noremap = true, silent = true})
 map('t','<M-l>',"<C-\\><C-n><C-w>l",{noremap = true, silent = true})
+
+
+vim.keymap.set('n','<leader>st',function ()
+    vim.cmd.split{mods={split='botright'}}
+    vim.cmd.term()
+    vim.cmd.wincmd{'_',count=math.floor(vim.o.lines/100*20)}
+    vim.cmd.startinsert()
+end)

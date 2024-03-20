@@ -11,18 +11,30 @@ local packer = require('packer')
 packer.startup(function() 
 	use 'wbthomason/packer.nvim'
 
-	use {
-		'ChristianChiarulli/vscode-easymotion',
-		as = 'vsc-easymotion'
-	}
+	-- use {
+	-- 	'easymotion/vim-easymotion'
+	-- }
 
 	use 'tpope/vim-surround'
 
-	-- use 'phaazon/hop.nvim'
+	use 'phaazon/hop.nvim'
 end)
 
-require 'hop'.setup{}
+--require 'hop'.setup{}
 local map = vim.api.nvim_set_keymap
+
+require('hop').setup()
+
+
+--- oracle sql developer
+map("n","<leader>os",":call VSCodeNotify('sqldeveloper.view.compile')<CR>",{noremap = true, silent = true})
+map("n","<leader>sd",":call VSCodeNotify('sqldeveloper.connections.focus')<CR>",{noremap = true, silent = true})
+map("n","<leader>or",":call VSCodeNotify('sqldeveloper.worksheet.runStatement')<CR>",{noremap = true, silent = true})
+map("n","<leader>ss",":call VSCodeNotify('sqldeveloper.worksheet.queryResult.focus')<CR>",{noremap = true, silent = true})
+map("n","<leader>sc",":call VSCodeNotify('sqldeveloper.worksheet.compileObject')<CR>",{noremap = true, silent = true})
+
+map("n","<leader>sb",":call VSCodeNotify('workbench.action.togglePanel')<CR>",{noremap = true, silent = true})
+map("n","<leader>sp",":call VSCodeNotify('workbench.action.toggleSidebarVisibility')<CR>",{noremap = true, silent = true})
 
 map("n","j","gj",{noremap = true})
 map("n","k","gk",{noremap = true})
@@ -39,6 +51,7 @@ map("n","gr","<cmd>call VSCodeNotify('editor.action.goToReferences')<CR>",{norem
 map("n","<leader>gr",":call VSCodeNotify('editor.action.rename')<CR>",{noremap = true, silent = true})
 map("n","qq",":q!<CR>",{})
 map("n","<leader>s",":w<CR>",{})
+map("n","<leader>st","<cmd>call VSCodeNotify('workbench.action.terminal.toggleTerminal')<CR>",{noremap = true, silent = true})
 map("n","==",":VSCodeCommentary<CR>",{noremap = true, silent = true})
 map("x","==",":'<,'>VSCodeCommentary<CR>",{noremap = true, silent = true})
 map("n","<leader>p","<cmd>call VSCodeNotify('workbench.action.showCommands')<CR>",{noremap = true, silent = true})
@@ -46,29 +59,24 @@ map("x","<leader>p","<cmd>call VSCodeNotify('workbench.action.showCommands')<CR>
 map("n","<leader>og","<cmd>call VSCodeNotify('workbench.action.showAllSymbols')<CR>",{})
 map("n","<leader>or",":call VSCodeNotify('sqldeveloper.worksheet.runStatement')<CR>",{noremap = true, silent = true})
 map("n","<leader>li",":call VSCodeNotify('editor.action.goToImplementation')<CR>",{noremap = true, silent = true})
-map("n","<leader>od",":call VSCodeNotify('oracleDBObjectExplorer.saveToDatabase')<CR>",{noremap = true, silent = true})
 map("n","<leader>ga",":call VSCodeNotify('keyboard-quickfix.openQuickFix')<CR>",{noremap = true, silent = true})
 map("n","<leader>lf",":call VSCodeNotify('editor.action.formatDocument')<CR>",{noremap = true, silent = true})
-map("n","<leader>ff",":call VSCodeNotify('workbench.view.explorer')<CR>",{noremap = true, silent = true})
-map("n","<leader>oo",":call VSCodeNotify('workbench.view.extension.oracle-db-explorer')<CR>",{noremap = true, silent = true})
+map("n","<leader>sf",":call VSCodeNotify('workbench.view.explorer')<CR>",{noremap = true, silent = true})
 map("n","<leader>t",":call VSCodeNotify('workbench.action.quickOpen')<CR>",{noremap = true, silent = true})
 map("n","<leader>v",":call VSCodeNotify('markdown.showPreviewToSide')<CR>",{noremap = true, silent = true})
-map("n","<leader>ld",":call VSCodeNotify('editor.action.revealDefinition')<CR>",{noremap = true, silent = true})
 map("n","<leader>ll",":call VSCodeNotify('workbench.action.editor.changeLanguageMode')<CR>",{noremap = true, silent = true})
-map("n","<leader>len",":call VSCodeNotify('editor.action.marker.next')<CR>",{noremap = true, silent = true})
+map("n","<leader>en",":call VSCodeNotify('editor.action.marker.next')<CR>",{noremap = true, silent = true})
 map("n","<leader>le",":call VSCodeNotify('workbench.actions.view.problems')<CR>",{noremap = true, silent = true})
-map("n","<leader>lr",":call VSCodeNotify('editor.action.goToReferences')<CR>",{noremap = true, silent = true})
-map("n","<leader>lR",":call VSCodeNotify('editor.action.rename')<CR>",{noremap = true, silent = true})
+map("n","<leader>gr",":call VSCodeNotify('editor.action.goToReferences')<CR>",{noremap = true, silent = true})
+map("n","<leader>lc",":call VSCodeNotify('editor.action.rename')<CR>",{noremap = true, silent = true})
 map("n","<leader>ltc",":call VSCodeNotify('dotnet.test.runTestsInContext')<CR>",{noremap = true, silent = true})
 map("n","<leader>ltd",":call VSCodeNotify('dotnet.test.debugTestsInContext')<CR>",{noremap = true, silent = true})
 map("n","<leader>z",":call VSCodeNotify('workbench.action.toggleZenMode')<CR>",{noremap = true, silent = true})
 map("n","<leader>n",":call VSCodeNotify('workbench.action.files.newUntitledFile')<CR>",{noremap = true, silent = true})
-map("n","<leader>gt",":call VSCodeNotify('workbench.action.tasks.runTask','opentodo')<CR>",{noremap = true, silent = true})
 map("n","<M-p>",":call VSCodeNotify('projectManager.listProjects')<CR>",{})
-map("n","<leader>ho","<Plug>(easymotion-overwin-w)",{})
-map("n","<leader>hw","<Plug>(easymotion-bd-w)",{})
-map("n","<leader>hl","<Plug>(easymotion-bd-jk)",{})
-map("n","<leader>hc","<Plug>(easymotion-bd-f)",{})
+map('n','<leader>hw',":HopWord<CR>",{})
+map('n','<leader>hl',":HopLine<CR>",{})
+map('n','<leader>hc',":HopChar1<CR>",{})
 map("n","<leader>ot",":call VSCodeNotify('workbench.action.quickOpen')<CR>",{noremap = true, silent = true})
 map("n","z=","<Cmd>call VSCodeNotify('keyboard-quickfix.openQuickFix')<CR>",{noremap = true, silent = true})
 map("n","za","<Cmd>call VSCodeNotify('editor.toggleFold')<CR>",{noremap = true, silent = true})

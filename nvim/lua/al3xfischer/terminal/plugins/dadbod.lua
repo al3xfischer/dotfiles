@@ -1,3 +1,10 @@
+
+vim.g.dbext_default_ORA_bin = 'sql'
+
+-- vim.g.dbs = [[ [ { 'name':'tgd-dev', 'url': 'oracle://tgd/oYai6ti7Ve4aethi@192.168.77.136/tgddev.itm.local' } ] ]]
+
+vim.cmd([[ let g:dbs = [ { 'name':'tgd-dev', 'url': 'oracle://tgd:oYai6ti7Ve4aethi@192.168.77.136/tgddev.itm.local' } ] ]])
+
 --local M = {}
 --
 --local function db_completion()

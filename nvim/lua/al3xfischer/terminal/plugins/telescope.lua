@@ -33,6 +33,18 @@ require('telescope').setup {
 		},
 		find_files = {
 			theme = "ivy",
+			find_command = {
+			  "rg",
+			  "--files",
+			  "--hidden",
+			  "--glob=!**/.git/*",
+			  "--glob=!**/.idea/*",
+			  "--glob=!**/.vscode/*",
+			  "--glob=!**/build/*",
+			  "--glob=!**/dist/*",
+			  "--glob=!**/yarn.lock",
+			  "--glob=!**/package-lock.json",
+			},
 		},
 	},
     extensions = {
@@ -41,7 +53,8 @@ require('telescope').setup {
             override_file_sorter = true,
         },
 		file_browser = {
-			theme = "ivy",
+			-- theme = "ivy",
+			hijack_netrw = true,
 		},
     }
 }

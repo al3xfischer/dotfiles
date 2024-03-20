@@ -2,8 +2,8 @@ require("lazy").setup({
      'neovim/nvim-lspconfig',
      { 'phaazon/hop.nvim', as = 'hop', },
      'tpope/vim-surround',
-     { 'nvim-lua/popup.nvim', requires = { { 'nvim-lua/plenary.nvim' } } },
-     { 'nvim-telescope/telescope.nvim', requires = { {'nvim-lua/plenary.nvim'} } },
+     { 'nvim-lua/popup.nvim', dependencies = { 'nvim-lua/plenary.nvim' } },
+     { 'nvim-telescope/telescope.nvim', dependencies = { 'nvim-lua/plenary.nvim' } },
      'nvim-telescope/telescope-project.nvim',
      'nvim-telescope/telescope-fzy-native.nvim',
      'morhetz/gruvbox',
@@ -28,14 +28,15 @@ require("lazy").setup({
  	-- 	},
  	-- }
 
-     { 
-           'folke/trouble.nvim',
-           config = function ()
-             require'trouble'.setup{}
-           end
-         },
+     -- { 
+     --       'folke/trouble.nvim',
+     --       config = function ()
+     --         require'trouble'.setup{}
+     --       end
+     --     },
      'folke/lsp-colors.nvim',
-     'tami5/lspsaga.nvim',
+     'tpope/vim-dadbod',
+     'kristijanhusak/vim-dadbod-ui',
      'hoob3rt/lualine.nvim',
      'ryanoasis/vim-devicons',
      { 'nvim-treesitter/nvim-treesitter' },
@@ -76,6 +77,3 @@ require("lazy").setup({
 require 'al3xfischer.terminal.plugins.config'
 require 'al3xfischer.terminal.plugins.lsp_config'
 require 'al3xfischer.terminal.plugins.telescope'
-
-
-
