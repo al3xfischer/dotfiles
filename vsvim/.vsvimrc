@@ -34,6 +34,7 @@ nmap <leader>st :vsc View.Terminal<CR>
 nmap <leader>sf :vsc View.SolutionExplorer<CR>
 nmap <leader>ss :vsc View.Output<CR>
 nmap <leader>sn :vsc Project.ManageNuGetPackages<CR>
+nmap <leader>se :vsc View.ErrorList<CR>
 
 nmap <leader>gt :vsc ReSharper.ReSharper_GotoText<CR>
 nmap <leader>gc :vsc ReSharper.ReSharper_GotoType<CR>
