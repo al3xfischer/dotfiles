@@ -5,41 +5,49 @@ nmap qq :bd!<CR>
 nmap L $
 nmap H ^
 imap jj <C-c>
-nmap <leader>a ggVG
 :set ignorecase
 :set smartcase
 nnoremap <leader>d "_d
 xnoremap <leader>d "_d
 xnoremap <leader>p "_dP
 map <Space>lf :vsc Edit.FormatDocument<CR>
-map <Space>lr :vsc Edit.RemoveAndSort<CR>
+map <Space>ld :vsc Debug.Start<CR>
 map <Space>le :vsc View.NextError<CR>
-map <Space>lta :vsc TestExplorer.RunAllTests<CR>
-map <Space>ltr :vsc TestExplorer.RepeatLastRun<CR>
-map <Space>ltd :vsc TestExplorer.DebugSelectedTests<CR>
-map <Space>lts :vsc TestExplorer.RunSelectedTests<CR>
+map <Space>lE :vsc View.PreviousError<CR>
+nmap <leader>lc :vsc refactor.Rename<CR>
+
+map <Space>tt :vsc ReSharper.ReSharper_UnitTestRunFromContext<CR>
+map <Space>td :vsc ReSharper.ReSharper_UnitTestDebugContext<CR>
+map <Space>ts :vsc ReSharper.ReSharper_UnitTestRunSolution<CR>
+
 map <Space>f :vsc View.SolutionExplorer<CR>
-"map <Space>f :csx Solution<CR>
 map <Space>n :vsc File.NewFile<CR>
-map <Space>t :vsc Edit.GoToAll<CR>
-map <Space>t :vsc ReSharper.ReSharper_GotoFile<CR>
-"map <Space>p :vsc Window.QuickLaunch<CR>
 map <c-j> :vsc Edit.LineDown<CR>
 map <c-k> :vsc Edit.LineUp<CR>
-"Jump to line beginning:
 nmap <Space>hl gS:vsc Tools.InvokePeasyMotionJumpToLineBegining<CR>
 nmap <Space>hw gS:vsc Tools.InvokePeasyMotion<CR>
 nmap <Tab> :tabnext<CR>
 nmap <S-Tab> :tabprev<CR>
 nmap qq :vsc File.Close<CR>
-nmap <leader>st :vsc View.Terminal
-nmap <leader>gr :vsc refactor.Rename<CR>
-nmap <Space>ga :vsc View.QuickActionscr>
+
+nmap <leader>st :vsc View.Terminal<CR>
+nmap <leader>sf :vsc View.SolutionExplorer<CR>
+nmap <leader>ss :vsc View.Output<CR>
+nmap <leader>sn :vsc Project.ManageNuGetPackages<CR>
+
+nmap <leader>gt :vsc ReSharper.ReSharper_GotoText<CR>
+nmap <leader>gc :vsc ReSharper.ReSharper_GotoType<CR>
+nmap <leader>gf :vsc ReSharper.ReSharper_GotoFile<CR>
+nmap <leader>ga :vsc View.QuickActions<CR>
+
+nmap <leader>am ggVG
+nmap <leader>af :vsc Project.AddNewItem<CR>
+nmap <leader>ap :vsc File.NewProject<CR>
+
 nmap gd :vsc Edit.GoToDefinition<CR>
 nmap gD :vsc Edit.GoToDeclaration<CR>
 nmap gh :vsc Edit.QuickInfo<CR>
 nmap gi :vsc Edit.GoToImplementation<CR>
-nmap gc :vsc Edit.ToggleLineComment<CR>
 vmap == :vsc Edit.ToggleLineComment<CR>
 nmap == :vsc Edit.ToggleLineComment<CR>
 set number relativenumber
