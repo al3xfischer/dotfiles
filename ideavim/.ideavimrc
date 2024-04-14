@@ -10,37 +10,41 @@ set sneak
 set quickscope
 set incsearch
 set hls
+set multiple-cursors
+set scrolloff=10
+set visualbell
 
 set showmode
 
 let mapleader = " "
+"nnoremap <leader>dd dd
 
-map <Leader>hl <Action>(KJumpAction.Line)
-map <Leader>hc <Action>(KJumpAction)
-map <Leader>hw <Action>(KJumpAction.Word0)
+noremap # "_
+map <Leader>hc <Action>(AceWordStartAction)
+map <Leader>hw <Action>(AceWordAction)
 map <Leader>s :w<CR>
-map <Leader>lr <Action>(RunClass)
+map <Leader>lr <Action>(Run)
 map <Leader>ld <Action>(Debug)
-map <Leader>lD <Action>(ToggleLineBreakpoint)
 map <Leader>or <Action>(Console.Jdbc.Execute)
-map <Leader>olr <Action>(Console.Jdbc.Execute)
-map <Leader>od <Action>(Console.Jdbc.Debug)
+map <leader>os <Action>(DatabaseView.Tools.SubmitChanges)
 map <Leader>lf <Action>(ReformatCode)
 map <Leader>lc <Action>(RenameElement)
 map <Leader>lE <Action>(GotoPreviousError)
 map <Leader>le <Action>(GotoNextError)
 map <Leader>gg <Action>(FindInPath)
-map <Leader>gt <Action>(GotoFile)
-map <Leader>gd <Action>(GotoClass)
+map <Leader>gf <Action>(GotoFile)
+map <Leader>gc <Action>(GotoClass)
+map <Leader>gt <Action>(TextSearchAction)
 map <Leader>a ggVG
 map <Leader>ö <Action>(EditorStartNewLine)
 map <Leader>Ö <Action>(EditorStartNewLineBefore)
-map <Leader>n <Action>(Jdbc.OpenConsole.New)
-nmap <Leader>p <Action>(SearchEverywhere)
-map <Leader>sf :NERDTreeToggle<CR>
+map <Leader>n <Action>(Jdbc.OpenConsole.New)n
+nmap <Leader>np <Action>(SearchEverywhere)
+map <Leader>sf :NERDTree<CR>
 map <Leader>sd <Action>(ActivateDatabaseToolWindow)
 map <Leader>ss <Action>(ActivateServicesToolWindow)
 map <Leader>sx <Action>(HideActiveWindow)
+map <Leader>sy <Action>(HideAllWindows)
 map <Leader>sa <Action>(ShowIntentionActions)
 map <Leader>so <Action>(ActivateTODOToolWindow)
 map <Leader>st <Action>(ActivateTerminalToolWindow)
@@ -49,22 +53,25 @@ map <Leader>vrc :e ~\.ideavimrc<CR>
 map <Leader>vrr <Action>(IdeaVim.ReloadVimRc.reload )
 map <Leader>ga <Action>(ShowIntentionActions)
 map <leader>z <Action>(ToggleDistractionFreeMode)
-vmap <leader>d "_d
-map § <Action>(EditorCodeBlockStart)
-map $ <Action>(EditorCodeBlockEnd)
-map <C-k> <Action>(DatabaseView.Tools.SubmitChanges)
+map <Leader>tt <Action>(RiderUnitTestRunContextAction)
+map <Leader>ts <Action>(RiderUnitTestRunSolutionAction)
+map <Leader>td <Action>(RiderUnitTestDebugContextAction)
+map L <Action>(EditorLineEnd)
+vmap L <Action>(EditorLineEndWithSelection)
 map <C-c> yy
 imap jj <Esc>
-imap <C-v> <C-o>p
+nmap p <Action>(EditorPaste)
+vmap p <Action>(EditorPaste)
 map gd <Action>(GotoDeclaration)
 map gD <Action>(QuickImplementations)
-map gh <Action>(ShowErrorDescription)
+map gh <Action>(ShowHoverInfo)
+map gH <Action>(ShowErrorDescription)
 map ga <Action>(ProblemsView.QuickFixes)
 map gi <Action>(GotoImplementation)
 map gr <Action>(ShowUsages)
 map <Leader>fr <Action>(RenameFile)
 map H ^
-map L <Action>(EditorLineEnd)
+map <S-w><S-L> <Action>(MoveTabRight)
 
 nmap Q  :%d<CR> <bar> :bd!<CR>
 nmap qq  :bd!<CR>
@@ -73,10 +80,11 @@ map <Tab> :tabnext<CR>
 map <S-Tab> :tabprev<CR>
 nmap == <Action>(CommentByLineComment)
 vmap == <Action>(CommentByLineComment)
-map <A-h> :tabprev<CR>
-map <A-j> <Action>(MoveLineDown)
-map <A-k> <Action>(MoveLineUp)
-map <A-l> :tabnext<CR>
+map <C-h> :tabprev<CR>
+map <C-k> <Action>(MoveLineUp)
+map <C-j> <Action>(MoveLineDown)
+
+map <C-l> :tabnext<CR>
 imap <C-k> <Action>(AcceptTabnineInlineCompletionAction)
 map <C-s> EditorScrollDown
 map <Leader>w '
@@ -149,6 +157,7 @@ sethandler <C-H> a:vim
 sethandler <C-I> a:vim
 sethandler <C-J> a:vim
 sethandler <A-J> a:vim
+sethandler <A-j> a:vim
 sethandler <C-K> a:vim
 sethandler <C-L> a:vim
 sethandler <C-M> a:vim
