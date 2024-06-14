@@ -17,14 +17,15 @@ set visualbell
 set showmode
 
 let mapleader = " "
-"nnoremap <leader>dd dd
 
 noremap # "_
-map <Leader>hc <Action>(AceWordStartAction)
-map <Leader>hw <Action>(AceWordAction)
+map <Leader>hc <Action>(KJumpAction)
+map <Leader>hw <Action>(KJumpAction.Word0)
+map <Leader>hl <Action>(KJumpAction.Line)
 map <Leader>s :w<CR>
 map <Leader>lr <Action>(Run)
 map <Leader>ld <Action>(Debug)
+map <Leader>ls <Action>(Stop)
 map <Leader>or <Action>(Console.Jdbc.Execute)
 map <leader>os <Action>(DatabaseView.Tools.SubmitChanges)
 map <Leader>lf <Action>(ReformatCode)
@@ -49,8 +50,8 @@ map <Leader>sa <Action>(ShowIntentionActions)
 map <Leader>so <Action>(ActivateTODOToolWindow)
 map <Leader>st <Action>(ActivateTerminalToolWindow)
 map <Leader>sp <Action>(Console.Jdbc.ToggleParameters)
+map <Leader>vrr <Action>(IdeaVim.ReloadVimRc.reload)
 map <Leader>vrc :e ~\.ideavimrc<CR>
-map <Leader>vrr <Action>(IdeaVim.ReloadVimRc.reload )
 map <Leader>ga <Action>(ShowIntentionActions)
 map <leader>z <Action>(ToggleDistractionFreeMode)
 map <Leader>tt <Action>(RiderUnitTestRunContextAction)
@@ -60,8 +61,6 @@ map L <Action>(EditorLineEnd)
 vmap L <Action>(EditorLineEndWithSelection)
 map <C-c> yy
 imap jj <Esc>
-nmap p <Action>(EditorPaste)
-vmap p <Action>(EditorPaste)
 map gd <Action>(GotoDeclaration)
 map gD <Action>(QuickImplementations)
 map gh <Action>(ShowHoverInfo)
@@ -72,7 +71,9 @@ map gr <Action>(ShowUsages)
 map <Leader>fr <Action>(RenameFile)
 map H ^
 map <S-w><S-L> <Action>(MoveTabRight)
+imap <C-k> <Action>(AcceptEntireTabnineInlineCompletionAction)
 
+nmap qp :pu<CR>
 nmap Q  :%d<CR> <bar> :bd!<CR>
 nmap qq  :bd!<CR>
 nmap ' `
@@ -85,7 +86,6 @@ map <C-k> <Action>(MoveLineUp)
 map <C-j> <Action>(MoveLineDown)
 
 map <C-l> :tabnext<CR>
-imap <C-k> <Action>(AcceptTabnineInlineCompletionAction)
 map <C-s> EditorScrollDown
 map <Leader>w '
 

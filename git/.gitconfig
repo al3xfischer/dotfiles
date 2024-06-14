@@ -1,0 +1,35 @@
+[core]
+	excludesfile = C:\\Users\\Alex\\.gitignore
+	pager = \"C:\\Windows\\System32\\more.com\"
+[user]
+	name = Alexander Fischer
+	email = alexander.fischer@it-elite.at
+
+[includeIf "gitdir:C:/Users/Alex/itm/"]
+	path = .gitconfig-itm
+[alias]
+	p = push
+	st = status -sb
+	ll = log --oneline
+	last = log -1 HEAD --stat
+	cm = commit -m
+	d = diff
+	df = difftool -t vimdiff -y
+	se = !git rev-list --all | xargs git grep -F
+	type = cat-file -t
+	unstage = reset HEAD --
+	ui = !gitk
+	wt = worktree
+	graph = log --graph --oneline --abbrev-commit
+[help]
+	autocorrect = 20
+[credential "https://gitlab.com"]
+	provider = generic
+[credential "https://git.it-management.at"]
+	provider = generic
+[push]
+	autoSetupRemote = true
+[http]
+	sslVerify = false
+[safe]
+	directory = G:\\Websites
