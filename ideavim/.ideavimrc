@@ -1,5 +1,4 @@
 set surround
-set commentary
 set clipboard=unnamed
 set NERDTree
 set matchit
@@ -26,6 +25,7 @@ map <Leader>s :w<CR>
 map <Leader>lr <Action>(Run)
 map <Leader>ld <Action>(Debug)
 map <Leader>ls <Action>(Stop)
+map <Leader>lp <Action>(ChooseDebugConfiguration)
 map <Leader>or <Action>(Console.Jdbc.Execute)
 map <leader>os <Action>(DatabaseView.Tools.SubmitChanges)
 map <Leader>lf <Action>(ReformatCode)
@@ -52,6 +52,7 @@ map <Leader>st <Action>(ActivateTerminalToolWindow)
 map <Leader>sp <Action>(Console.Jdbc.ToggleParameters)
 map <Leader>vrr <Action>(IdeaVim.ReloadVimRc.reload)
 map <Leader>vrc :e ~\.ideavimrc<CR>
+map <Leader>vrr <Action>(IdeaVim.ReloadVimRc.reload)
 map <Leader>ga <Action>(ShowIntentionActions)
 map <leader>z <Action>(ToggleDistractionFreeMode)
 map <Leader>tt <Action>(RiderUnitTestRunContextAction)
@@ -81,13 +82,16 @@ map <Tab> :tabnext<CR>
 map <S-Tab> :tabprev<CR>
 nmap == <Action>(CommentByLineComment)
 vmap == <Action>(CommentByLineComment)
+nmap gcc <Action>(CommentByLineComment)
+vmap gc <Action>(CommentByLineComment)
 map <C-h> :tabprev<CR>
-map <C-k> <Action>(MoveLineUp)
+nmap <C-k> <Action>(MoveLineUp)
+vmap <C-k> <Action>(MoveLineUp)
 map <C-j> <Action>(MoveLineDown)
-
 map <C-l> :tabnext<CR>
 map <C-s> EditorScrollDown
 map <Leader>w '
+map <leader>n <Action>(NewElement)
 
 map ma mA
 map mb mB
@@ -174,3 +178,4 @@ sethandler <C-W> a:vim
 sethandler <C-X> a:vim
 sethandler <C-Y> a:vim
 sethandler <C-b> a:vim
+sethandler <C-ö> i:vim
