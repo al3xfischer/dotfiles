@@ -22,12 +22,16 @@ map <Leader>hc <Action>(KJumpAction)
 map <Leader>hw <Action>(KJumpAction.Word0)
 map <Leader>hl <Action>(KJumpAction.Line)
 map <Leader>s :w<CR>
-map <Leader>lr <Action>(Run)
+
+if &ide =~? 'DataGrip'
+    map <Leader>lr <Action>(Console.Jdbc.Execute)
+    map <leader>os <Action>(DatabaseView.Tools.SubmitChanges)
+else
+    map <Leader>lr <Action>(Run)
+endif
 map <Leader>ld <Action>(Debug)
 map <Leader>ls <Action>(Stop)
 map <Leader>lp <Action>(ChooseDebugConfiguration)
-map <Leader>or <Action>(Console.Jdbc.Execute)
-map <leader>os <Action>(DatabaseView.Tools.SubmitChanges)
 map <Leader>lf <Action>(ReformatCode)
 map <Leader>lc <Action>(RenameElement)
 map <Leader>lE <Action>(GotoPreviousError)
