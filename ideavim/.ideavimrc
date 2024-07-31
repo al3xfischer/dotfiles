@@ -26,7 +26,6 @@ map <Leader>lr <Action>(Run)
 map <Leader>ld <Action>(Debug)
 map <Leader>ls <Action>(Stop)
 map <Leader>lp <Action>(ChooseDebugConfiguration)
-map <Leader>or <Action>(Console.Jdbc.Execute)
 map <leader>os <Action>(DatabaseView.Tools.SubmitChanges)
 map <Leader>lf <Action>(ReformatCode)
 map <Leader>lc <Action>(RenameElement)
@@ -92,6 +91,12 @@ map <C-l> :tabnext<CR>
 map <C-s> EditorScrollDown
 map <Leader>w '
 map <leader>n <Action>(NewElement)
+
+if &ide =~? 'DataGrip'
+    map <Leader>lr <Action>(Console.Jdbc.Execute)
+else
+    map <Leader>lr <Action>(Run)
+endif
 
 map ma mA
 map mb mB
