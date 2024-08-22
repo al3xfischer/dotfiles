@@ -217,6 +217,18 @@ init()
   Run "komorebic toggle-pause", ,"Hide"
 }
 
+;; Move to monitor 0
+;; alt + s 		        : komorebic move-to-monitor 0
+!s:: {
+  Run "komorebic move-to-monitor 0", , "Hide"
+}
+
+;; Move to monitor 1
+;; alt + a 		        : komorebic move-to-monitor 1
+!a:: {
+  Run "komorebic move-to-monitor 1", , "Hide"
+}
+
 ; Switch to workspace
 ; Alt + 1~9
 ; Equal to bind key !1 to !9 to workspace 0 ~ 8
@@ -235,6 +247,8 @@ For num in numbers{
 ^+r::{ 
   Run "komorebic retile", ,"Hide"
 }
+
+
 
 ;; Native (AHK) Windows Key Rebinding
 
