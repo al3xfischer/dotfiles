@@ -1,0 +1,11 @@
+@media print {
+    
+    table {
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    p {
+        font-size: 16px;
+    }
+}
